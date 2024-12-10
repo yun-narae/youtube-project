@@ -1,8 +1,4 @@
 @charset "UTF-8";
 
-// setting
-@import "setting/fonts";
-@import "setting/vars";
-@import "setting/reset";
-@import "setting/mixin";
-@import "setting/common";
+@import "./section";
+@import "./setting";
