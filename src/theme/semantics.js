@@ -17,8 +17,16 @@ export default {
       background: color.gray[100],
       label: color.gray[800],
       border: color.stone[200],
-      keywordborder: color.stone[400],
+      keywordborder: color.stone[300],
     },
+    Switch: {
+      border: color.gray[800],
+      ball: color.gray[800],
+    },
+    NavActive: {
+      navbackground: color.gray[200],
+      keywordactiveborder: color.stone[600],
+    }
 
   },
   [THEME_MODE.DARK]: {
@@ -32,5 +40,14 @@ export default {
       border: color.gray[800],
       keywordborder: color.stone[700],
     },
+    Switch: {
+      border: color.gray[200],
+      ball: color.gray[200],
+    },
+    NavActive: {
+      navbackground: color.gray[800],
+      keywordactiveborder: color.stone[400],
+
+    }
   },
 };

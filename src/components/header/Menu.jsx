@@ -13,20 +13,32 @@ const Menu = () => {
         Header: { border, keywordborder },
     } = theme;
 
+    const {
+        NavActive: { navbackground, keywordactiveborder },
+    } = theme;
+
     const menuStyles = {
         borderColor: border,
+    };
+
+    const menuActiveStyles = {
+        backgroundColor: navbackground,
     };
 
     const keywordStyles = {
         borderColor: keywordborder,
     };
 
+    const keywordActiveStyles = {
+        borderColor: keywordactiveborder,
+    };
+
     return (
         <nav className='header__menu'>
             <ul className='menu' style={menuStyles}>
                 {headerMenus.map((menu, key) => (
-                    <li key={key} className={location.pathname === menu.src ? 'active' : ''}>
-                        <Link to={menu.src} >
+                    <li key={key}>
+                        <Link to={menu.src} style={location.pathname === menu.src ? menuActiveStyles : {}}>
                             {menu.icon}{menu.title}
                         </Link>
                     </li>
@@ -34,8 +46,8 @@ const Menu = () => {
             </ul>
             <ul className='keyword' >
                 {searchKeyword.map((keyword, key) => (
-                    <li key={key} className={location.pathname === keyword.src ? 'active' : ''}>
-                        <Link to={keyword.src} style={keywordStyles}>
+                    <li key={key}>
+                        <Link to={keyword.src} style={location.pathname === keyword.src ? keywordActiveStyles : keywordStyles}>
                             {keyword.title}
                         </Link>
                     </li>

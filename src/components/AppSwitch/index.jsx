@@ -1,6 +1,7 @@
 import { animate, spring } from 'motion';
 import { useRef, useEffect, memo } from 'react';
 import { bool, func, number } from 'prop-types';
+import { useTheme } from '../../contexts/theme';
 
 const springAnimation = spring({ stiffness: 500, damping: 40, keyframes: 1 });
 
@@ -13,6 +14,26 @@ AppSwitch.propTypes = {
 function AppSwitch({ value = false, onToggle, ratio = 2, ...restProps }) {
   const buttonRef = useRef(null);
   const ballRef = useRef(null);
+  const { theme } = useTheme();
+
+  const {
+    Switch: { border, ball },
+  } = theme;
+
+  const switchborder = {
+      borderColor: border,
+    };
+
+  const switchStyles = {
+    '--ratio': ratio,
+    ...switchborder, // 기존 스타일 추가
+  };
+
+  const ballStyles = {
+    backgroundColor: ball,
+  }
+
+  
 
   useEffect(() => {
     const el = ballRef.current;
@@ -43,11 +64,15 @@ function AppSwitch({ value = false, onToggle, ratio = 2, ...restProps }) {
       type="button"
       aria-checked={value}
       className="btn"
-      style={{ '--ratio': ratio }}
+      style={switchStyles}
       onClick={handleToggle}
       {...restProps}
     >
-      <span className="ball" ref={ballRef} />
+      <span 
+        className="ball" 
+        ref={ballRef} 
+        style={ballStyles}>
+      </span>
     </button>
   );
 }
