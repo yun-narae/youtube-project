@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/section/Header';
+import Main from './components/section/Main';
 import Home from './pages/Home';
 import Today from './pages/Today';
 import Developer from './pages/Developer';
@@ -12,8 +14,6 @@ import Channel from './pages/Channel';
 import Video from './pages/Video';
 import Search from './pages/Search';
 import Not from './pages/Not';
-import Header from './components/section/Header';
-import Main from './components/section/Main';
 import Footer from './components/section/Footer';
 
 const App = () => {
