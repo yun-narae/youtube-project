@@ -38,11 +38,9 @@ $border-bottom: 4px solid;
 }
 
 .header__menu {
-    padding: 10px 0;
-
     .menu {
         border-bottom: $border-bottom;
-
+        padding: 20px 0;
         li {
             a {
                 font-size: var(font-size);
@@ -86,11 +84,12 @@ $border-bottom: 4px solid;
     }
 }
 
-.swith {
+.switch {
     padding: 1.25rem;
     display: flex;
     align-items: center;
     font-weight: 600;
+    padding-bottom: 120px;
     
     .btn {
         --ratio: 3;

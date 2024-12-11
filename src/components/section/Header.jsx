@@ -25,26 +25,19 @@ const Header = () => {
     const containerStyles = {
         borderColor: border,
     };
-    
 
     return (
         <header id='header' role='banner' style={boxStyles}>
             <Logo />
             <Menu />
             <Sns />
-            <div style={containerStyles} className='swith'>
+            <div style={containerStyles} className='switch'>
                 <AppSwitch value={isDarkMode} onToggle={handleToggle} ratio={2} />
-                {isDarkMode ? '다크' : '라이트'} 테마
+                {isDarkMode ? '다크' : '라이트'} 모드
             </div>
         </header>
     )
 }
 
 export default Header;
-
-const containerStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 12,
-  };
   
