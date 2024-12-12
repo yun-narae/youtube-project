@@ -7,6 +7,7 @@ export const THEME_MODE = {
   DARK: 'dark',
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   [THEME_MODE.LIGHT]: {
     forground: color.gray[800],
