@@ -2,8 +2,19 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useTheme } from '../../contexts/theme';
 
 const Main = (props) => {
+    const { theme } = useTheme();
+
+    const {
+        Main: { backgroundColor },
+    } = theme;
+
+    const mainbackgroundColor = {
+        backgroundColor: backgroundColor,
+    };
+
     return (
         <HelmetProvider>
             <Helmet
@@ -16,7 +27,7 @@ const Main = (props) => {
             </Helmet>
             
             <Header />
-                <main id='main' role='main'>
+                <main id='main' role='main' style={mainbackgroundColor}>
                     {props.children}
                 </main>
             <Footer />

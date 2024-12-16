@@ -29,6 +29,9 @@ export default {
       keywordBorderColor: color.stone[300],
       activeKeywordBorderColor: color.stone[600],
     },
+    Main: {
+      backgroundColor: color.white,
+    }
   },
   [THEME_MODE.DARK]: {
     textColor: color.white,
@@ -50,5 +53,8 @@ export default {
       keywordBorderColor: color.stone[700],
       activeKeywordBorderColor: color.stone[400],
     },
+    Main: {
+      backgroundColor: color.black,
+    }
   },
 };
