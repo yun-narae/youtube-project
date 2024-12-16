@@ -25,3 +25,21 @@
         // color: var(--white);
     }
 }
+
+@media (max-width: 1200px) {
+    .search__inner {
+        position: fixed;
+        background-color: red;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        padding: 17px 20px 17px 200px;
+
+        label {
+            left: 213px;
+        }
+        input {
+            padding: 14px 14px 14px 45px;
+        }
+    }
+}

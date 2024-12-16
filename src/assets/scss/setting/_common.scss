@@ -6,8 +6,8 @@ body {
 section {
     padding: 40px;
 
-    @media (max-width: 800){
-        padding: 20px;
+    @media (max-width: 1200px){
+        padding: 120px 20px;
     }
 
     h2 {

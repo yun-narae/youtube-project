@@ -28,7 +28,7 @@
     .desc {
         margin-bottom: 1rem;
         color: var(--white200);
-        @include line(4)
+        @include line(2)
     }
         
     .info {
@@ -60,21 +60,17 @@
             .title {
                 font-size: 24px;
             }
-
-            .desc {
-                @include line(2)
-            }
         }
     }
 }
 
-@media (min-width: 1201px) and (max-width: 1700px) {
+@media (min-width: 1201px) and (max-width: 1920px) {
     .today__inner {
         .today__thumb {
-            width: 100%;
+            width: 500px;
         }
         .today__text {
-            width: calc(100% - 540px);
+            width: calc(100% - 500px);
         }
     }
 }
