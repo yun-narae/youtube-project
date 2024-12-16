@@ -1,0 +1,27 @@
+.search__inner {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    padding: 17px 40px;
+    // border-bottom: 1px solid black;
+
+    label {
+        width: 24px;
+        height: 24px;
+        background-image: url(../../img/icon/search.svg);
+        position: absolute;
+        left: 53px;
+        top: 32px;
+        background-size: cover;
+    }
+
+    input {
+        // background-color: dodgerblue;
+        // border: 1px solid black;
+        width: 100%;
+        padding: 14px 45px;
+        border-radius: 40px;
+        font-size: 1rem;
+        // color: var(--white);
+    }
+}
