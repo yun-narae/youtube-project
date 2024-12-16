@@ -1,0 +1,48 @@
+.today__inner {
+    display: flex;
+    background-color: #e6e6e8;
+    margin-bottom: 1.125rem;
+}
+
+.today__thumb {
+    width: 40%;
+}
+
+.today__text {
+    width: 60%;
+    padding: 2rem;
+
+    .today {
+        background-color: #bbb3bc;
+        padding: 2px 50px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        @include line-one;
+    }
+    .desc {
+        margin-bottom: 1rem;
+        color: var(--white200);
+        @include line(4)
+    }
+        
+    .info {
+        .author {
+            font-size: 1rem;
+            margin-right: 10px;
+            font-weight: 900;
+            text-decoration: underline;
+            text-underline-position: under;
+            text-transform: uppercase;
+        }
+        .date {
+            font-style: 0.8rem;
+            color: var(--white200);
+        }
+    }
+}

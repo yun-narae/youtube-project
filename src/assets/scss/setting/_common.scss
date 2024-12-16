@@ -2,3 +2,17 @@ body {
     // background-color: var(--black);
     // color: var(--white);
 }
+
+section {
+    padding: 40px;
+
+    @media (max-width: 800){
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+}
