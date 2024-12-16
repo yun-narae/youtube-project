@@ -7,11 +7,11 @@ const Sns = () => {
     const { theme } = useTheme();
 
     const {
-        Header: { border },
+        Header: { borderColor },
     } = theme;
 
     const borderStyles = {
-        borderColor: border,
+        borderColor: borderColor,
     };
 
     return (

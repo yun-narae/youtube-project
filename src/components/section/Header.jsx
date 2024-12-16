@@ -14,16 +14,16 @@ const Header = () => {
     }, [toggleMode]);
 
     const {
-        Header: { background, label, border },
+        Header: { backgroundColor, textColor, borderColor },
     } = theme;
 
     const boxStyles = {
-        backgroundColor: background,
-        color: label
+        backgroundColor: backgroundColor,
+        color: textColor
     };
 
     const containerStyles = {
-        borderColor: border,
+        borderColor: borderColor,
     };
 
     return (

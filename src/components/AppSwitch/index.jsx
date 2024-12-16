@@ -17,11 +17,11 @@ function AppSwitch({ value = false, onToggle, ratio = 2, ...restProps }) {
   const { theme } = useTheme();
 
   const {
-    Switch: { border, ball },
+    ThemeSwitch: { borderColor, ballColor },
   } = theme;
 
   const switchborder = {
-      borderColor: border,
+      borderColor: borderColor,
     };
 
   const switchStyles = {
@@ -30,7 +30,7 @@ function AppSwitch({ value = false, onToggle, ratio = 2, ...restProps }) {
   };
 
   const ballStyles = {
-    backgroundColor: ball,
+    backgroundColor: ballColor,
   }
 
   

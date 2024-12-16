@@ -10,27 +10,27 @@ const Menu = () => {
     const { theme } = useTheme();
 
     const {
-        Header: { border, keywordborder },
+        Header: { borderColor },
     } = theme;
 
     const {
-        NavActive: { navbackground, keywordactiveborder },
+        Navigation: { keywordBorderColor, activenavbackgroundColor, activeKeywordBorderColor },
     } = theme;
 
     const menuStyles = {
-        borderColor: border,
+        borderColor: borderColor,
     };
 
     const menuActiveStyles = {
-        backgroundColor: navbackground,
+        backgroundColor: activenavbackgroundColor,
     };
 
     const keywordStyles = {
-        borderColor: keywordborder,
+        borderColor: keywordBorderColor,
     };
 
     const keywordActiveStyles = {
-        borderColor: keywordactiveborder,
+        borderColor: activeKeywordBorderColor,
     };
 
     return (

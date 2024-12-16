@@ -10,45 +10,45 @@ export const THEME_MODE = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   [THEME_MODE.LIGHT]: {
-    forground: color.gray[800],
-    background: color.white,
-    accent: color.gray[500],
+    textColor: color.gray[800],
+    backgroundColor: color.white,
+    accentColor: color.gray[500],
 
     Header: {
-      background: color.gray[100],
-      label: color.gray[800],
-      border: color.stone[200],
-      keywordborder: color.stone[300],
+      backgroundColor: color.gray[100],
+      textColor: color.gray[800],
+      borderColor: color.stone[200],
     },
-    Switch: {
-      border: color.gray[800],
-      ball: color.gray[800],
+    ThemeSwitch: {
+      borderColor: color.gray[800],
+      ballColor: color.gray[800],
     },
-    NavActive: {
-      navbackground: color.gray[200],
-      keywordactiveborder: color.stone[600],
-    }
-
+    Navigation: {
+      navbackgroundColor: color.gray[200],
+      activenavbackgroundColor: color.gray[200],
+      keywordBorderColor: color.stone[300],
+      activeKeywordBorderColor: color.stone[600],
+    },
   },
   [THEME_MODE.DARK]: {
-    forground: color.white,
-    background: color.gray[900],
-    accent: color.gray[500],
+    textColor: color.white,
+    backgroundColor: color.gray[900],
+    accentColor: color.gray[500],
 
     Header: {
-      background: color.gray[900],
-      label: color.gray[100],
-      border: color.gray[800],
-      keywordborder: color.stone[700],
+      backgroundColor: color.gray[900],
+      textColor: color.gray[100],
+      borderColor: color.gray[800],
     },
-    Switch: {
-      border: color.gray[200],
-      ball: color.gray[200],
+    ThemeSwitch: {
+      borderColor: color.gray[200],
+      ballColor: color.gray[200],
     },
-    NavActive: {
-      navbackground: color.gray[800],
-      keywordactiveborder: color.stone[400],
-
-    }
+    Navigation: {
+      navbackgroundColor: color.gray[200],
+      activenavbackgroundColor: color.gray[800],
+      keywordBorderColor: color.stone[700],
+      activeKeywordBorderColor: color.stone[400],
+    },
   },
 };
