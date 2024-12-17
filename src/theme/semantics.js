@@ -32,6 +32,11 @@ export default {
     Main: {
       backgroundColor: color.white,
     },
+    SearchInput: {
+      backgroundColor: color.gray[100],
+      borderColor: color.gray[200],
+      textColor: color.black,
+    },
     Today: {
       backgroundColor: color.gray[100],
       borderColor: color.gray[200],
@@ -63,6 +68,11 @@ export default {
     },
     Main: {
       backgroundColor: color.black,
+    },
+    SearchInput: {
+      backgroundColor: color.gray[900],
+      borderColor: color.gray[800],
+      textColor: color.white,
     },
     Today: {
       backgroundColor: color.gray[900],
