@@ -2,6 +2,8 @@
 
 .developer__inner {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
     &.overflow {
         width: 100%;
@@ -10,15 +12,19 @@
     }
 
     .developer {
-        margin-right: 20px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
         .developer__img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
+            border: 1px solid #e9e8e8;
         }
-
+        
         p {
             width: 150px;
             text-align: center;
@@ -27,4 +33,23 @@
 
         }
     }   
+}
+
+@media (max-width: 1200px) {
+    .developer__inner {
+        justify-content: center;
+
+        .developer {
+            
+
+            .developer__img {
+                width: 120px;
+                height: 120px;
+            }
+
+            p {
+
+            }
+        }
+    }
 }
