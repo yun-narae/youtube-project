@@ -31,6 +31,14 @@ export default {
     },
     Main: {
       backgroundColor: color.white,
+    },
+    Today: {
+      backgroundColor: color.gray[100],
+      borderColor: color.gray[200],
+      textColor: color.black,
+      textinfoColor: color.gray[600],
+      labelbackgroundColor: color.gray[300],
+      labeltextColor: color.gray[700],
     }
   },
   [THEME_MODE.DARK]: {
@@ -55,6 +63,14 @@ export default {
     },
     Main: {
       backgroundColor: color.black,
+    },
+    Today: {
+      backgroundColor: color.gray[900],
+      borderColor: color.gray[800],
+      textColor: color.white,
+      textinfoColor: color.gray[500],
+      labelbackgroundColor: color.gray[800],
+      labeltextColor: color.gray[300],
     }
   },
 };

@@ -1,7 +1,9 @@
 .today__inner {
     display: flex;
-    background-color: #e6e6e8;
     margin-bottom: 1.125rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid;
 }
 
 .today__thumb {
@@ -12,9 +14,9 @@
     width: 60%;
     padding: 2rem;
 
-    .today {
-        background-color: #bbb3bc;
-        padding: 2px 50px;
+    .label {
+        font-weight: 700;
+        padding: 10px 20px;
         border-radius: 20px;
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -23,11 +25,11 @@
     .title {
         font-size: 2rem;
         margin-bottom: 1rem;
+        font-weight: 700;
         @include line-one;
     }
     .desc {
         margin-bottom: 1rem;
-        color: var(--white200);
         @include line(2)
     }
         
@@ -42,7 +44,6 @@
         }
         .date {
             font-style: 0.8rem;
-            color: var(--white200);
         }
     }
 }
