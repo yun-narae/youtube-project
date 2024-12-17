@@ -18,6 +18,11 @@ export default {
       backgroundColor: color.gray[100],
       textColor: color.gray[800],
       borderColor: color.stone[200],
+      logoColor: color.black,
+    },
+    Footer: {
+      backgroundColor: color.gray[100],
+      textColor: color.gray[500]
     },
     ThemeSwitch: {
       borderColor: color.gray[800],
@@ -31,6 +36,21 @@ export default {
     },
     Main: {
       backgroundColor: color.white,
+    },
+    SearchInput: {
+      backgroundColor: color.white,
+      borderColor: color.gray[100],
+      inputbackgroundColor: color.gray[100],
+      inputborderColor: color.gray[200],
+      textColor: color.black,
+    },
+    Today: {
+      backgroundColor: color.gray[100],
+      borderColor: color.gray[200],
+      textColor: color.black,
+      textinfoColor: color.gray[600],
+      labelbackgroundColor: color.gray[300],
+      labeltextColor: color.gray[700],
     }
   },
   [THEME_MODE.DARK]: {
@@ -42,6 +62,11 @@ export default {
       backgroundColor: color.gray[900],
       textColor: color.gray[100],
       borderColor: color.gray[800],
+      logoColor: color.white,
+    },
+    Footer: {
+      backgroundColor: color.gray[900],
+      textColor: color.gray[600]
     },
     ThemeSwitch: {
       borderColor: color.gray[200],
@@ -55,6 +80,21 @@ export default {
     },
     Main: {
       backgroundColor: color.black,
+    },
+    SearchInput: {
+      backgroundColor: color.black,
+      borderColor: color.gray[800],
+      inputbackgroundColor: color.gray[900],
+      inputborderColor: color.gray[800],
+      textColor: color.white,
+    },
+    Today: {
+      backgroundColor: color.gray[900],
+      borderColor: color.gray[800],
+      textColor: color.white,
+      textinfoColor: color.gray[500],
+      labelbackgroundColor: color.gray[800],
+      labeltextColor: color.gray[300],
     }
   },
 };

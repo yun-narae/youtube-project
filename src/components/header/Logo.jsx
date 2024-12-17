@@ -5,17 +5,21 @@ const Logo = () => {
   const { theme } = useTheme();
 
   const {
-      Header: { borderColor },
+      Header: { borderColor, logoColor },
   } = theme;
 
   const borderStyles = {
       borderColor: borderColor,
   };
 
+  const logoStyles = {
+    backgroundColor: logoColor,
+  };
+
   return (
     <h1 className='header__logo' style={borderStyles}>
         <a href='/'>
-            <em aria-hidden='true'></em>
+            <em aria-hidden='true' style={logoStyles}></em>
             <span>webs<br />youtube</span>
         </a>
     </h1>

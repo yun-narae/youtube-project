@@ -1,0 +1,25 @@
+@media (max-width: 1200px) {
+    #header {
+        left: -260px;
+        
+        h1 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            border: 0;
+        }
+
+        .header__sns {
+            position: unset;
+        }
+    }
+
+    #main {
+        padding-left: 0;
+    }
+
+    #footer {
+        width: 100%;
+        margin-left: 0;
+    }
+}
