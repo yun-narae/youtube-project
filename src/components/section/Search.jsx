@@ -5,18 +5,22 @@ const Search = () => {
     const { theme } = useTheme();
 
     const {
-        SearchInput: { backgroundColor, borderColor, textColor},
+        SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, textColor},
     } = theme;
 
+    const innerStyle = {
+        backgroundColor: backgroundColor,        borderColor: borderColor,
+    };
+
     const inputStyle = {
-        backgroundColor: backgroundColor,
-        borderColor: borderColor,
+        backgroundColor: inputbackgroundColor,
+        borderColor: inputborderColor,
         color: textColor
     };
 
     return (
     <div id='search'>
-        <div className='search__inner'>
+        <div className='search__inner' style={innerStyle}>
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
