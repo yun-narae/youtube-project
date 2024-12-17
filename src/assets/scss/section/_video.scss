@@ -1,0 +1,6 @@
+.video__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    justify-content: space-between;
+    row-gap: 10px;
+}
