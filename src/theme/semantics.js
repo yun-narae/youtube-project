@@ -18,6 +18,7 @@ export default {
       backgroundColor: color.gray[100],
       textColor: color.gray[800],
       borderColor: color.stone[200],
+      logoColor: color.black,
     },
     ThemeSwitch: {
       borderColor: color.gray[800],
@@ -55,6 +56,7 @@ export default {
       backgroundColor: color.gray[900],
       textColor: color.gray[100],
       borderColor: color.gray[800],
+      logoColor: color.white,
     },
     ThemeSwitch: {
       borderColor: color.gray[200],
