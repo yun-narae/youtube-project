@@ -1,55 +1,84 @@
 @use './../setting' as *;
 
-.developer__inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    &.overflow {
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-    }
-
-    .developer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        .developer__img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 1px solid #e9e8e8;
-        }
-        
-        p {
-            width: 150px;
-            text-align: center;
-            padding: 20px 0;
-            @include line-one;
-
-        }
-    }   
-}
-
-@media (max-width: 1200px) {
+#developer {
     .developer__inner {
-        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        &.overflow {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
 
         .developer {
-            
+            // margin-right: 20px;
 
             .developer__img {
-                width: 120px;
-                height: 120px;
+                // width: 150px;
+                // height: 150px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 10px;
             }
-
-            p {
-
+            .developer__info {
+                // width: 150px;
+                // padding-bottom: 40px;
+                text-align: center;
+                @include line-one;
             }
+        }
+    }
+}
+
+#developerPage {
+    .developer__inner {
+        display: flex;
+        flex-wrap: wrap;
+
+        .developer {
+            margin-right: 20px;
+            
+            .developer__img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+            .developer__info {
+                width: 150px;
+                padding-bottom: 40px;
+                text-align: center;
+                @include line-one;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1200px){
+    #developerPage {
+        .developer__inner {
+            justify-content: center;
+    
+            .developer {
+                margin-right: 0;
+                
+                .developer__img {
+                    width: 130px;
+                    height: 130px;
+                    margin: 10px auto;
+                }
+            }   
+        }
+    }
+    
+}
+@media (max-width: 800px){
+    #developerPage {
+        .developer__inner {
+            margin-top: 70px;
         }
     }
 }

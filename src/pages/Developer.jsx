@@ -19,9 +19,11 @@ const Developer = () => {
                                             <img src={developer.img} alt={developer.name} />
                                     </Link>
                                 </div>
-                                <Link to={`/channel/${developer.channelId}`}>
-                                    <p>{developer.name}</p>
-                                </Link>
+                                <div className="developer__info">
+                                    <Link to={`/channel/${developer.channelId}`}>
+                                        <p>{developer.name}</p>
+                                    </Link>
+                                </div>
                         </div>
                     )}
                 </div>
