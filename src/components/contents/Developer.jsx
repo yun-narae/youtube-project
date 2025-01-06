@@ -1,25 +1,82 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { developerText } from '../../data/developer'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/navigation';
+import { Navigation, Autoplay } from 'swiper/modules';
 
+const Developer = ({ videos, title, id}) => {
+    const [loading, setLoading] = useState(true);
 
-const Developer = () => {
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 500);
+    }, []);
+
+    // isLoading에서 0.5초 후에 isLoaded로 바뀐다.
+    // 실제 데이터 로딩 시간무관하고 애니메이션을 주기위한 작업
+    // 섹션 로딩 소스 _common.scss
+    const developerClass = loading ? 'isLoading' : 'isLoaded';
+
     return (
-        <section id='developer'>
-            <h2>추천 개발자</h2>
-            <div className='developer__inner overflow'>
-                {developerText.map((developer, key) => 
-                    <div className='developer' key={key}>
-                            <div className="developer__img play__icon">
-                                <Link to={`/channel/${developer.channelId}`}>
-                                        <img src={developer.img} alt={developer.name} />
-                                </Link>
+        <section id={id} className={developerClass}>
+            <h2>{title}</h2>
+            <div className='developer__inner'>
+                <Swiper
+                    modules={[Autoplay, Navigation]}
+                    className="mySwiper"
+                    slidesPerView={4}
+                    spaceBetween={15}
+                    navigation={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 5,
+                            spaceBetween: 15
+                        },
+                        768: {
+                            slidesPerView: 6,
+                            spaceBetween: 15
+                        },
+                        1024: {
+                            slidesPerView: 7,
+                            spaceBetween: 15
+                        },
+                        1240: {
+                            slidesPerView: 8,
+                            spaceBetween: 15
+                        },
+                        1640: {
+                            slidesPerView: 9,
+                            spaceBetween: 20
+                        },
+                        2000: {
+                            slidesPerView: 10,
+                            spaceBetween: 20
+                        }
+                    }}
+                >
+                    {videos.map((developer, key) => (
+                        <SwiperSlide key={key}>
+                            <div className='developer'>
+                                <div className="developer__img play__icon">
+                                    <Link to={`/channel/${developer.channelId}`}>
+                                            <img src={developer.img} alt={developer.name} />
+                                    </Link>
+                                </div>
+                                <div className="developer__info">
+                                    <Link to={`/channel/${developer.channelId}`}>
+                                        {developer.name}
+                                    </Link>
+                                </div>
                             </div>
-                            <Link to={`/channel/${developer.channelId}`}>
-                                <p>{developer.name}</p>
-                            </Link>
-                    </div>
-                )}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
     )

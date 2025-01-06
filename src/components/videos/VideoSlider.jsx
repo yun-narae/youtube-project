@@ -13,8 +13,10 @@ const VideoSlider = ({ videos, title, id }) => {
             setLoading(false)
         }, 500) 
     }, []);
+    
     // isLoading에서 0.5초 후에 isLoaded로 바뀐다.
     // 실제 데이터 로딩 시간무관하고 애니메이션을 주기위한 작업
+    // 섹션 로딩 소스 _common.scss
     const videoClass = loading ? 'isLoading' : 'isLoaded';
 
     return (
