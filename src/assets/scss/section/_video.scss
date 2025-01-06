@@ -2,5 +2,17 @@
     display: grid;
     grid-template-columns: repeat(4, 24%);
     justify-content: space-between;
-    row-gap: 10px;
+    gap: 10px;
+    @media (max-width: 1400px){
+        grid-template-columns: repeat(3, 32%);
+        gap: 15px;
+    }
+    @media (max-width: 1200px){
+        grid-template-columns: repeat(2, 49%);
+        gap: 10px;
+    }
+    @media (max-width: 400px){
+        grid-template-columns: repeat(1, 100%);
+    }
+    
 }
