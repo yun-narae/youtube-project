@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -29,6 +30,24 @@ const VideoSlider = ({ videos, title, id }) => {
                 navigation={true}
                 modules={[Navigation]}
                 className={`mySwiper-${id}`}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    },
+                    1600: {
+                        slidesPerView: 5,
+                        spaceBetween: 20
+                    }
+                }}
                 breakpoints={{
                     640: {
                         slidesPerView: 2,
