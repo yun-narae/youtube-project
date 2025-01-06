@@ -1,0 +1,28 @@
+.swiper-button-prev.swiper-button-disabled, 
+.swiper-button-next.swiper-button-disabled {
+    opacity: 0 !important;
+}
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    color: #fff !important;
+    font-size: 30px !important;
+}
+.swiper-pagination-bullet {
+    background-color: #fff !important;
+}
+.swiper-button-next {
+    background-color: #00000069;
+    right: 0 !important;
+    top: 40% !important;
+}
+.swiper-button-prev {
+    background-color: #00000069;
+    left: 0 !important;
+    top: 40% !important;
+}
+.video__slider .swiper-button-next {
+    top: 50% !important;
+}
+.video__slider .swiper-button-prev {
+    top: 50% !important;
+}
