@@ -1,3 +1,5 @@
+@use './../setting' as *;
+
 .video__inner {
     display: grid;
     grid-template-columns: repeat(4, 24%);
@@ -13,6 +15,62 @@
     }
     @media (max-width: 400px){
         grid-template-columns: repeat(1, 100%);
-    }
+    }   
+}
+
+.video__inner.search {
+    min-height: 100vh;
     
+    .video {
+        margin-bottom: 40px;
+        border-radius: 10px;
+        background-color: #111;
+
+        @media (max-width: 600px){
+            margin-bottom: 10px;
+        }
+
+        .video__thumb {
+
+            a {
+                position: relative;
+                display: block;
+                cursor: pointer;
+                width: 100%;
+                padding-bottom: 56.25%;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        .video__info {
+            padding: 10px 15px;
+            color: #fff;
+    
+            .title {
+                font-size: 1rem;
+                @include line-two;
+            }
+            .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                
+                .author {
+                    @include line-one;
+                    color: #666;
+                    transition: all 0.3s;
+    
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+                .date {
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+    }
 }
