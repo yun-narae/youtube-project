@@ -8,12 +8,17 @@ const Search = () => {
     const navigate = useNavigate();
 
     const handleSearch = () => {
-        console.log(searchKeyword);
-        if(searchKeyword){
-            navigate(`/search/${searchKeyword}`);
-            setSearchKeyword('');
+        // searchKeyword가 공백이거나 빈 문자열인 경우 경고 표시
+        if (!searchKeyword.trim()) {
+            alert('검색 결과가 없습니다.');
+            return; // 검색 수행 중단
         }
-    }
+        
+        console.log(searchKeyword);
+
+        navigate(`/search/${searchKeyword}`);
+        setSearchKeyword('');
+    };
 
     const {
         SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, textColor},
@@ -42,10 +47,11 @@ const Search = () => {
                 id='searchInput'
                 autoComplete='off'
                 className='search__input'
-                onChange={e => setSearchKeyword(e.target.value)}
+                placeholder="검색어를 입력하세요" 
+                onChange={e => setSearchKeyword(e.target.value)} // 값을 setSearchKeyword에 전달
                 onKeyDown={e => {
                     if(e.key === 'Enter'){
-                        handleSearch();
+                        handleSearch(); // Enter를 치면 handleSearch함수 실행
                     }
                 }}
             />
