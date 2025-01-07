@@ -4,6 +4,7 @@ import { useTheme } from '../../contexts/theme';
 import Header from './Header';
 import Footer from './Footer';
 import Search from './Search';
+import ScrollTo from '../../utils/scrollTo';
 
 const Main = (props) => {
     const { theme } = useTheme();
@@ -18,6 +19,7 @@ const Main = (props) => {
 
     return (
         <HelmetProvider>
+            <ScrollTo />
             <Helmet
                 titleTemplate="%s | Webs Youtube" 
                 defaultTitle="Webs Youtube" 
