@@ -11,7 +11,7 @@ const Search = () => {
     
     useEffect(() => {
         fetch(
-            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&type=video&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
         )
         .then(response => response.json())
         .then(result => {
@@ -33,6 +33,7 @@ const Search = () => {
             description="유튜브 검색 결과 페이지입니다."
         >    
             <section id='searchPage'>
+                <h2><em>{searchId}</em>검색 결과입니다.</h2>
                 <div className="video__inner search">
                     <VideoSearch videos={videos} />
                 </div>
