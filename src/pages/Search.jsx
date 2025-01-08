@@ -10,19 +10,19 @@ const Search = () => {
     const [ videos, setVideos ] = useState([]);
     
     useEffect(() => {
-        // fetch(
-        //     `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
-        // )
-        // .then(response => response.json())
-        // .then(result => {
-        //     console.log(result);
-        //     setVideos(result.items)
-        // })
-        // .catch(error => console.log(error));
+        fetch(
+            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+        )
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+            setVideos(result.items)
+        })
+        .catch(error => console.log(error));
 
-        fetchFromAPI(`search?part=snippet&q=${searchId}`)
-            .then((data) => setVideos(data.items))
-            console.log('API Key:', process.env.REACT_APP_RAPID_API_KEY);
+        // fetchFromAPI(`search?part=snippet&q=${searchId}`)
+        //     .then((data) => setVideos(data.items))
+        //     console.log('API Key:', process.env.REACT_APP_RAPID_API_KEY);
 
     }, [searchId]);
 
