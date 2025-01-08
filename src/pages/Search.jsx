@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Main from '../components/section/Main';
 import VideoSearch from '../components/videos/VideoSearch';
+import { fetchFromAPI } from '../utils/api';
 
 
 const Search = () => {
@@ -18,7 +19,13 @@ const Search = () => {
             setVideos(result.items)
         })
         .catch(error => console.log(error));
-        }, [searchId]);
+
+        // fetchFromAPI(`search?part=snippet&q=${searchId}`)
+        //     .then((data) => setVideos(data.items))
+        //     console.log('API Key:', process.env.REACT_APP_RAPID_API_KEY);
+
+    }, [searchId]);
+
 
     return (
         <Main
