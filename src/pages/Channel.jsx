@@ -26,6 +26,7 @@ const Channel = () => {
             {channelDetail && (
                 <section id='channel'>
                     <div className='channel__header'>
+                        {/* 채널 배너는 OAuth 2.0 인증이 필요 */}
                         <div className='circle'>
                             <img src={channelDetail.snippet.thumbnails.high.url} alt={channelDetail.snippet.title} />
                         </div>
