@@ -11,7 +11,7 @@ const Search = () => {
     
     useEffect(() => {
         fetch(
-            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchId}&type=video&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
         )
         .then(response => response.json())
         .then(result => {
