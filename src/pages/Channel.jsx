@@ -28,7 +28,7 @@ const Channel = () => {
                 
                 // 채널의 비디오 목록 가져오기
                 const videoResponse = await fetch(
-                    `https://youtube.googleapis.com/youtube/v3/search?channelId=${channelId}&part=snippet,id&orderdate&maxResults=20&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+                    `https://youtube.googleapis.com/youtube/v3/search?channelId=${channelId}&part=snippet,id&type=video&order=date&maxResults=20&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
                 );
                 const videoData = await videoResponse.json();
                 setChannelVideo(videoData?.items);
