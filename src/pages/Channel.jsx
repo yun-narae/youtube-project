@@ -4,9 +4,16 @@ import { useParams } from 'react-router-dom';
 import { CiBadgeDollar, CiMedal, CiRead } from 'react-icons/ci';
 
 const Channel = () => {
+    const [loading, setLoading] = useState(true);
     const { channelId } = useParams();
     const [ channelDetail, setChannelDetail ] = useState()
     
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 500);
+    }, []);
+
     useEffect(() => {
         fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
 
@@ -18,12 +25,14 @@ const Channel = () => {
         console.log(channelId)
     }, [channelId]);
 
+    const channelPageClass = loading ? 'isLoading' : 'isLoaded';
+
     return (
         <Main 
             title = "유튜브 채널"
             description="유튜브 채널페이지입니다."
         >
-            <section id='channel'>
+            <section id='channel' className={channelPageClass}>
                 {channelDetail && (
                     <div className='channel__inner'>
                         <div className='channel__header'>
