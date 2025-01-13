@@ -1,7 +1,8 @@
 @media (max-width: 1200px) {
     #header {
         left: -260px;
-        
+        transition: left 0.3s;
+
         h1 {
             position: fixed;
             left: 0;
@@ -11,6 +12,13 @@
 
         .header__sns {
             position: unset;
+        }
+
+        &.active {
+            left: 0;
+            .header__menu {
+                margin-top: 64px;
+            }
         }
     }
 

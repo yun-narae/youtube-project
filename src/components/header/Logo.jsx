@@ -1,7 +1,8 @@
 import React from 'react'
 import { useTheme } from '../../contexts/theme';
+import { Link } from 'react-router-dom';
 
-const Logo = () => {
+const Logo = ({ toggleMenu }) => {
   const { theme } = useTheme();
 
   const {
@@ -18,10 +19,10 @@ const Logo = () => {
 
   return (
     <h1 className='header__logo' style={borderStyles}>
-        <a href='/'>
-            <em aria-hidden='true' style={logoStyles}></em>
+        <Link to='/'>
+            <em aria-hidden='true' style={logoStyles} onClick={toggleMenu}></em>
             <span>webs<br />youtube</span>
-        </a>
+        </Link>
     </h1>
   )
 }

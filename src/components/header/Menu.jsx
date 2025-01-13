@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { headerMenus, searchKeyword } from '../../data/header';
 import { useTheme } from '../../contexts/theme';
+import Sns from './Sns';
+import AppSwitch from '../AppSwitch';
 
 
 const Menu = () => {
+    const { isDarkMode, toggleMode } = useTheme();
+
     const location = useLocation();
 
     const { theme } = useTheme();
+
+    const handleToggle = useCallback(() => {
+        toggleMode();
+      }, [toggleMode]);
 
     const {
         Header: { borderColor },
@@ -33,6 +41,10 @@ const Menu = () => {
         borderColor: activeKeywordBorderColor,
     };
 
+    const containerStyles = {
+        borderColor: borderColor,
+    };
+
     return (
         <nav className='header__menu'>
             <ul className='menu' style={menuStyles}>
@@ -53,6 +65,11 @@ const Menu = () => {
                     </li>
                 ))}
             </ul>
+            <Sns />
+            <div style={containerStyles} className='switch'>
+                <AppSwitch value={isDarkMode} onToggle={handleToggle} ratio={2} />
+                {isDarkMode ? '다크' : '라이트'} 모드
+            </div>
         </nav>
     )
 }
