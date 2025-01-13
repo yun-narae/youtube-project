@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
+import LoadMoreButton from '../Button/LoadMoreButton';
 
 const VideoCard = ({ videos = [], title, id, className }) => {
     const [displayedVideos, setDisplayedVideos] = useState([]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Main from '../components/section/Main';
 import VideoSearch from '../components/videos/VideoSearch';
-import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
+import LoadMoreButton from '../components/Button/LoadMoreButton';
 
 const Search = () => {
     const { searchId } = useParams();

@@ -3,7 +3,7 @@ import Main from '../components/section/Main';
 import { useParams } from 'react-router-dom';
 import { CiBadgeDollar, CiMedal, CiRead } from 'react-icons/ci';
 import VideoSearch from '../components/videos/VideoSearch';
-import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
+import LoadMoreButton from '../components/Button/LoadMoreButton';
 
 const Channel = () => {
     const [loading, setLoading] = useState(true);
