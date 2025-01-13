@@ -31,9 +31,12 @@
     }
 }
 
+.channel__inner {
+    padding: 0 20px;
+}
+
 .channel__info {
     margin-top: 100px;
-    
     text-align: center;
 
     .title {
@@ -41,7 +44,6 @@
     }
     .desc {
         color: #4f4f4f;
-        padding: 0 10vw;
         margin-bottom: 30px;
         overflow-wrap: anywhere;
     }
@@ -62,25 +64,5 @@
 }
 
 .channel__video {
-    padding: 40px;
     margin-top: 50px;
-}
-.channel__more {
-    padding: 40px;
-
-    button {
-        width: 100%;
-        border: 0;
-        padding: 20px;
-        background-color: #1a1a1a;
-        color: #fff;
-        transition: all 0.3s;
-        margin-bottom: 20px;
-        cursor: pointer;
-        border-radius: 40px;
-
-        &:hover {
-            background-color: #111010;
-        }
-    }
 }

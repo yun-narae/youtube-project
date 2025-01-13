@@ -22,13 +22,8 @@
     min-height: 100vh;
     
     .video {
-        margin-bottom: 40px;
         border-radius: 10px;
         background-color: #111;
-
-        @media (max-width: 600px){
-            margin-bottom: 10px;
-        }
 
         .video__thumb {
 
@@ -126,4 +121,23 @@
             white-space: pre-line;
         }
     } 
+}
+
+.video__more {
+    margin-top: 20px;
+    
+    button {
+        width: 100%;
+        border: 0;
+        padding: 20px;
+        background-color: #e6e6e8;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border-radius: 40px;
+
+        &:hover {
+            background-color: #ccccd1;
+        }
+    }
 }
