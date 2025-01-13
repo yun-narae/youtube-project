@@ -127,3 +127,20 @@
         }
     } 
 }
+
+.video__more {
+    button {
+        width: 100%;
+        border: 0;
+        padding: 20px;
+        background-color: #e6e6e8;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border-radius: 40px;
+
+        &:hover {
+            background-color: #ccccd1;
+        }
+    }
+}

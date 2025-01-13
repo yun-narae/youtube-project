@@ -63,13 +63,15 @@ const Search = () => {
                 <div className="video__inner search">
                     <VideoSearch videos={videos} />
                 </div>
-            </section>
             {nextPageToken && (
-                <LoadMoreButton
-                    onClick={handleLoadMore}
-                    loading={loadingMore}
-                />
+                <div className="video__more">
+                    <LoadMoreButton
+                        onClick={handleLoadMore}
+                        loading={loadingMore}
+                    />
+                </div>
              )}
+            </section>
         </Main>
     )
 }

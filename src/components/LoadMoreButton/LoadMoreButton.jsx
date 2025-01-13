@@ -2,7 +2,6 @@ import React from 'react';
 
 const LoadMoreButton = ({ onClick, loading }) => (
     <button
-        className="load-more-button"
         onClick={onClick}
         disabled={loading}
     >
