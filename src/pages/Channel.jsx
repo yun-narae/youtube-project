@@ -8,16 +8,10 @@ import LoadMoreButton from '../components/Button/LoadMoreButton';
 const Channel = () => {
     const [loading, setLoading] = useState(true);
     const { channelId } = useParams();
-    const [channelDetail, setChannelDetail] = useState();
+    const [channelDetail, setChannelDetail] = useState(null);
     const [channelVideo, setChannelVideo] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
     const [loadingMore, setLoadingMore] = useState(false);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 500);
-    }, []);
 
     useEffect(() => {
         const fetchChannelData = async () => {
@@ -34,15 +28,12 @@ const Channel = () => {
                     `https://youtube.googleapis.com/youtube/v3/search?channelId=${channelId}&part=snippet,id&type=video&order=date&maxResults=20&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
                 );
                 const videoData = await videoResponse.json();
-                setChannelVideo(videoData?.items);
+                setChannelVideo(videoData?.items || []);
                 setNextPageToken(videoData?.nextPageToken || null);
-
-                console.log('채널 데이터:', channelData);
-                console.log('비디오 데이터:', videoData);
             } catch (error) {
                 console.error('데이터 가져오기 오류:', error);
             } finally {
-                setLoading(false); // 데이터를 가져온 후 로딩 상태 해제
+                setLoading(false);
             }
         };
 
@@ -73,45 +64,73 @@ const Channel = () => {
         }
     };
 
-    const channelPageClass = loading ? 'isLoading' : 'isLoaded';
-
     return (
-        <Main
-            title="유튜브 채널"
-            description="유튜브 채널페이지입니다."
-        >
-            <section id="channel" className={channelPageClass}>
-                {channelDetail && (
+        <Main title="유튜브 채널" description="유튜브 채널 페이지입니다.">
+            <section id="channel">
+            {loading ? (
                     <>
-                    <div className="channel__header">
-                        {/* 채널 배너는 OAuth 2.0 인증이 필요 */}
-                        <div className="circle">
-                            <img src={channelDetail.snippet.thumbnails.high.url} alt={channelDetail.snippet.title} />
+                        <div className="skeleton-header">
+                            <div className="skeleton-thumb"></div>
                         </div>
-                    </div>
-                    <div className="channel__inner">
-                        <div className="channel__info">
-                            <h3 className="title">{channelDetail.snippet.title}</h3>
-                            <p className="desc">{channelDetail.snippet.description}</p>
-                            <div className="info">
-                                <span><CiBadgeDollar />{channelDetail.statistics.subscriberCount}</span>
-                                <span><CiMedal />{channelDetail.statistics.videoCount}</span>
-                                <span><CiRead />{channelDetail.statistics.viewCount}</span>
+                        <div className="skeleton-inner__channel">
+                            <div className="skeleton-title"></div>
+                            <div className="skeleton-video">
+                                {[...new Array(4)].map((_, idx) => (  // 2개의 스켈레톤 UI 반복 생성
+                                <div className="skeleton-loader skeleton-loader__video">
+                                    <div className="skeleton-thumb skeleton-thumb__search"></div>
+                                    <div className="skeleton-card">
+                                        <div className="skeleton-info"></div>
+                                        <div className="skeleton-info"></div>
+                                    </div>
+                                </div>
+                                ))}
                             </div>
                         </div>
-                        <div className="channel__video video__inner search">
-                            <VideoSearch videos={channelVideo} />
-                        </div>
-                        {nextPageToken && (
-                            <div className="video__more">
-                                <LoadMoreButton
-                                    onClick={handleLoadMore}
-                                    loading={loadingMore}
+                    </>
+                ) : channelDetail ? (
+                    <>
+                        <div className="channel__header">
+                            <div className="circle">
+                                <img
+                                    src={channelDetail.snippet.thumbnails.high.url}
+                                    alt={channelDetail.snippet.title}
                                 />
                             </div>
-                        )}
-                    </div>
+                        </div>
+                        <div className="channel__inner">
+                            <div className="channel__info">
+                                <h3 className="title">{channelDetail.snippet.title}</h3>
+                                <p className="desc">{channelDetail.snippet.description}</p>
+                                <div className="info">
+                                    <span>
+                                        <CiBadgeDollar />
+                                        {channelDetail.statistics.subscriberCount}
+                                    </span>
+                                    <span>
+                                        <CiMedal />
+                                        {channelDetail.statistics.videoCount}
+                                    </span>
+                                    <span>
+                                        <CiRead />
+                                        {channelDetail.statistics.viewCount}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="channel__video video__inner search">
+                                <VideoSearch videos={channelVideo} />
+                            </div>
+                            {nextPageToken && (
+                                <div className="video__more">
+                                    <LoadMoreButton
+                                        onClick={handleLoadMore}
+                                        loading={loadingMore}
+                                    />
+                                </div>
+                            )}
+                        </div>
                     </>
+                ) : (
+                    <p>채널 정보를 가져오는 데 실패했습니다.</p>
                 )}
             </section>
         </Main>

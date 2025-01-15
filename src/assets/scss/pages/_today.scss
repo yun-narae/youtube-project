@@ -10,7 +10,7 @@
     width: 40%;
 }
 
-.today__text {
+.today__card {
     width: 60%;
     padding: 2rem;
 
@@ -55,7 +55,7 @@
         .today__thumb {
             width: 100%;
         }
-        .today__text {
+        .today__card {
             width: 100%;
 
             .title {
@@ -70,7 +70,7 @@
         .today__thumb {
             width: 500px;
         }
-        .today__text {
+        .today__card {
             width: calc(100% - 500px);
         }
     }

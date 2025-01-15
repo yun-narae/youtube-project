@@ -12,16 +12,14 @@ const Webd = () => {
         }, 500);
     }, []);
 
-    const webdPageClass = loading ? 'isLoading' : 'isLoaded';
-
     return (
         <Main
             title="웹디자인 기능사"
             description="웹디자인 기능사 튜토리얼 강의입니다."
         >
             <VideoCard
-                className={webdPageClass}
                 id="webd"
+                loading={loading}
                 videos={webdText}
                 title="웹디자인 기능사 준비는 이걸로!"
                 // breakpoint, mobileCount, desktopCount 동적으로 페이지에 따라 적용 예시
