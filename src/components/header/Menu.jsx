@@ -65,11 +65,11 @@ const Menu = () => {
                     </li>
                 ))}
             </ul>
-            <Sns />
             <div style={containerStyles} className='switch'>
                 <AppSwitch value={isDarkMode} onToggle={handleToggle} ratio={2} />
                 {isDarkMode ? '다크' : '라이트'} 모드
             </div>
+            <Sns />
         </nav>
     )
 }
