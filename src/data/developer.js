@@ -42,12 +42,6 @@ export const developerText = [
         channelId: "UC2nkWbaJt1KQDi2r2XclzTQ"
     },
     {
-        img: "https://yt3.googleusercontent.com/oLi5jJ2AKs_aYpR9UpUpu052M84WIE2j9cpnNb1VnpBHZMHVrTRPwrUIncJGu6--PVR-x-22=s176-c-k-c0x00ffffff-no-rj",
-        name: "개발하는 정대리",
-        channelAddress: "https://www.youtube.com/@dev_jeongdaeri",
-        channelId: "UCutO2H_AVmWHbzvE92rpxjA"
-    },
-    {
         img: "https://yt3.googleusercontent.com/ytc/AOPolaTw2ZRRi6UzhNeunJh03HOeAnKScgRJygpN7_MsVQ=s176-c-k-c0x00ffffff-no-rj",
         name: "코딩애플",
         channelAddress: "https://www.youtube.com/@codingapple",
@@ -150,12 +144,6 @@ export const developerText = [
         channelId: "UCkXqOdpo5ul8BosGBFlDgmw"
     },
     {
-        img: "https://yt3.googleusercontent.com/O8iON5EAVx6HVKyOV5UMreLFI_0D3mJX373vTEGoNcVRpNP7Lq8swha7BSLWTiEWlZaF7a4ENW8=s176-c-k-c0x00ffffff-no-rj",
-        name: "Code With Antonio",
-        channelAddress: "https://www.youtube.com/@codewithantonio",
-        channelId: "UCW_4e6sUTMWHxlF06aErH9w"
-    },
-    {
         img: "https://yt3.googleusercontent.com/nwyG0ql8sxARogaFb3sgpjoNd86v7hL9W2eeEysP2LryigBtYtX-J2Mw9H1lpcB9D4sw0aCx9w=s176-c-k-c0x00ffffff-no-rj",
         name: "EGATOR",
         channelAddress: "https://www.youtube.com/@EGATORTUTORIALS",
@@ -166,18 +154,6 @@ export const developerText = [
         name: "빔캠프 CSS",
         channelAddress: "https://www.youtube.com/@veamcamp",
         channelId: "UCvx57s_ZBt5VG4fvlStiq2g"
-    },
-    {
-        img: "https://yt3.googleusercontent.com/wr8dNnJ8dSHjBsHKag3O6ZCKmxJvnxqhpPi-E6sWf83JYKxnevU2iSt3FzLxjzrZOCTRpbi53mg=s176-c-k-c0x00ffffff-no-rj",
-        name: "코딩카페1",
-        channelAddress: "https://www.youtube.com/@CodingCafe1",
-        channelId: "UCt76J5CYnXL-uoJmQPG2Azw"
-    },
-    {
-        img: "https://yt3.googleusercontent.com/AVa5OPep1y0E8bZMIyLDyzg1jTwApHaSCi2RUG0epuLFZe0e80yvYo7MNHd-ApnvOtDgT3A3=s176-c-k-c0x00ffffff-no-rj",
-        name: "Codegrid",
-        channelAddress: "https://www.youtube.com/@codegrid",
-        channelId: "UC7pVho4O31FyfQsZdXWejEw"
     },
     {
         img: "https://yt3.googleusercontent.com/wgnEbc2Ec2JYkeyzUbiHzDlAFObI2Btwo2YRCEF1aCMBiRc5E_zWy8-URBQS3EMQ1yzzaGFR=s176-c-k-c0x00ffffff-no-rj",
