@@ -13,14 +13,9 @@ const VideoSlider = ({ videos, title, id }) => {
             setLoading(false)
         }, 500) 
     }, []);
-    
-    // isLoading에서 0.5초 후에 isLoaded로 바뀐다.
-    // 실제 데이터 로딩 시간무관하고 애니메이션을 주기위한 작업
-    // 섹션 로딩 소스 _common.scss
-    const videoClass = loading ? 'isLoading' : 'isLoaded';
 
     return (
-        <section id={id} className={videoClass}>
+        <section id={id}>
             <h2>{title}</h2>
             <div className='video__slider'>
             <Swiper 
@@ -48,7 +43,16 @@ const VideoSlider = ({ videos, title, id }) => {
                     }
                 }}
             >
-                {videos.map((video, key) => (
+                {loading ? 
+                        [...new Array(12)].map((_, idx) => (
+                              <SwiperSlide key={idx}>
+                                  <div className="skeleton-loader skeleton-loader__video">
+                                      <div className="skeleton-thumb"></div>
+                                  </div>
+                              </SwiperSlide>
+                          ))
+                        : 
+                    videos.map((video, key) => (
                     <SwiperSlide key={key}>
                         <div className="video" >
                             <div className="video__thumb play__icon">
@@ -58,7 +62,7 @@ const VideoSlider = ({ videos, title, id }) => {
                             </div>
                         </div>
                     </SwiperSlide>
-                ))}
+                    ))}
             </Swiper>
             </div>
         </section>

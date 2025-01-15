@@ -5,24 +5,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay } from 'swiper/modules';
 
-const Developer = ({ videos, title, id}) => {
+const Developer = ({ videos, title, id }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
-            setLoading(false)
+            setLoading(false);
         }, 500);
     }, []);
 
-    // isLoading에서 0.5초 후에 isLoaded로 바뀐다.
-    // 실제 데이터 로딩 시간무관하고 애니메이션을 주기위한 작업
-    // 섹션 로딩 소스 _common.scss
-    const developerClass = loading ? 'isLoading' : 'isLoaded';
-
     return (
-        <section id={id} className={developerClass}>
+        <section id={id}>
             <h2>{title}</h2>
-            <div className='developer__inner'>
+            <div className="developer__inner">
                 <Swiper
                     modules={[Autoplay, Navigation]}
                     className="mySwiper"
@@ -36,50 +31,59 @@ const Developer = ({ videos, title, id}) => {
                     breakpoints={{
                         640: {
                             slidesPerView: 5,
-                            spaceBetween: 15
+                            spaceBetween: 15,
                         },
                         768: {
                             slidesPerView: 6,
-                            spaceBetween: 15
+                            spaceBetween: 15,
                         },
                         1024: {
                             slidesPerView: 7,
-                            spaceBetween: 15
+                            spaceBetween: 15,
                         },
                         1240: {
                             slidesPerView: 8,
-                            spaceBetween: 15
+                            spaceBetween: 15,
                         },
                         1640: {
                             slidesPerView: 9,
-                            spaceBetween: 20
+                            spaceBetween: 20,
                         },
                         2000: {
                             slidesPerView: 10,
-                            spaceBetween: 20
-                        }
+                            spaceBetween: 20,
+                        },
                     }}
                 >
-                    {videos.map((developer, key) => (
-                        <SwiperSlide key={key}>
-                            <div className='developer'>
-                                <div className="developer__img play__icon">
-                                    <Link to={`/channel/${developer.channelId}`}>
-                                            <img src={developer.img} alt={developer.name} />
-                                    </Link>
-                                </div>
-                                <div className="developer__info">
-                                    <Link to={`/channel/${developer.channelId}`}>
-                                        {developer.name}
-                                    </Link>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                    {loading ? 
+                        [...new Array(12)].map((_, idx) => (
+                              <SwiperSlide key={idx}>
+                                  <div className="skeleton-loader skeleton-loader__developer">
+                                      <div className="skeleton-thumb"></div>
+                                      <div className="skeleton-info"></div>
+                                  </div>
+                              </SwiperSlide>
+                          ))
+                        : videos.map((developer, key) => (
+                              <SwiperSlide key={key}>
+                                  <div className="developer">
+                                      <div className="developer__img play__icon">
+                                          <Link to={`/channel/${developer.channelId}`}>
+                                              <img src={developer.img} alt={developer.name} />
+                                          </Link>
+                                      </div>
+                                      <div className="developer__info">
+                                          <Link to={`/channel/${developer.channelId}`}>
+                                              {developer.name}
+                                          </Link>
+                                      </div>
+                                  </div>
+                              </SwiperSlide>
+                          ))}
                 </Swiper>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Developer
+export default Developer;

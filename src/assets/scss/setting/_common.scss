@@ -12,17 +12,6 @@ section {
     }
 }
 
-// 섹션 로딩 소스
-.isLoading {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.isLoaded {
-    opacity: 1;
-    transition: opacity 0.5s;
-}
-
 // 마우스 오버 아이콘
 .play__icon {
     a {
