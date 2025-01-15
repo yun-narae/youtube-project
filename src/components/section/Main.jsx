@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useTheme } from '../../contexts/theme';
 import Header from './Header';
@@ -8,6 +8,11 @@ import ScrollTo from '../../utils/scrollTo';
 
 const Main = (props) => {
     const { theme } = useTheme();
+    const [ isMenuActive, setIsMenuActive ] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuActive(!isMenuActive);
+    }
 
     const {
         Main: { backgroundColor },
@@ -29,9 +34,9 @@ const Main = (props) => {
                 <meta name="description" content={props.description} />
             </Helmet>
             
-            <Header />
+            <Header toggleMenu={toggleMenu} isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
             <main id='main' role='main' style={mainbackgroundColor}>
-                <Search />
+                <Search toggleMenu={toggleMenu} isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
                 {props.children}
             </main>
             <Footer />

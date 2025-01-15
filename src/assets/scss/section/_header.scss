@@ -10,14 +10,31 @@ $border-bottom: 4px solid;
     height: 100%;
     overflow-y: auto;
     z-index: 10000;
+    
+    @media (max-width: 1200px) {
+        .header__sns {
+            position: unset;
+        }
+        
+        &.active {
+            left: 0;
+        }
+
+        .switch {
+            padding-bottom: 60px;
+        }
+    }
 }
 
 .header__logo {
     border-bottom: $border-bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 
     a {
         display: flex;
-        padding: 10px;
 
         em {
             width: 40px;
@@ -80,6 +97,30 @@ $border-bottom: 4px solid;
                 transition: 0.3s;
             }
         }
+    }
+}
+
+.btn-box {
+    cursor: pointer;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 100%도 가능 */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    display: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* 반응형 설정 */
+    @media (max-width: 1200px) {
+        display: flex;
     }
 }
 

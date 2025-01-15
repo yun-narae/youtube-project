@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 let debounceTimer; // 컴포넌트 외부에 변수 선언
 
-const Search = () => {
+const Search = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
     const [ searchKeyword, setSearchKeyword ] = useState('');
     const navigate = useNavigate();
@@ -63,6 +63,16 @@ const Search = () => {
     return (
     <div id='search'>
         <div className='search__inner' style={innerStyle}>
+            <div
+                className="btn-box"
+                id="headerToggle"
+                role="button"
+                tabIndex="0"
+                aria-controls="primary-menu"
+                onClick={toggleMenu}
+            >
+                <span>{isMenuActive ? "햄" : "버거"}</span>
+            </div>
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
