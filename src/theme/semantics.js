@@ -39,7 +39,7 @@ export default {
             hovernavbackgroundColor: color.gray[200],
             keywordBorderColor: color.stone[300],
             activeKeywordBorderColor: color.stone[600],
-            hoverkeywordBorderColor: color.stone[400]
+            hoverkeywordBorderColor: color.stone[600]
         },
         Main: {
             backgroundColor: color.white,
@@ -96,7 +96,7 @@ export default {
             hovernavbackgroundColor: color.gray[800],
             keywordBorderColor: color.stone[700],
             activeKeywordBorderColor: color.stone[400],
-            hoverkeywordBorderColor: color.stone[400],
+            hoverkeywordBorderColor: color.stone[200],
         },
         Main: {
             backgroundColor: color.black,
