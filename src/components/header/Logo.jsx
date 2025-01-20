@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import { Link } from 'react-router-dom';
 
 const Logo = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
+    const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
 
     const {
         textColor,
-        Header: { borderColor, logoColor, navMenuColor },
+        Header: { borderColor, logoColor, navBtnbackColor, navBtnbackColorHover },
     } = theme;
 
     const styles = {
         navMenuStyles: {
-            backgroundColor: navMenuColor,
+            backgroundColor: navBtnbackColor,
         },
 
         textStyles: {
@@ -42,7 +43,12 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
                         tabIndex="0"
                         aria-controls="primary-menu"
                         onClick={toggleMenu}
-                        style={styles.navMenuStyles}
+                        onMouseEnter={() => setIsHovered(true)} // hover 시작
+                        onMouseLeave={() => setIsHovered(false)} // hover 종료
+                        style={{
+                            ...styles.navMenuStyles, 
+                            backgroundColor: isHovered ? navBtnbackColorHover : navBtnbackColor // 조건부로 배경색 변경
+                        }}
                     >
                         <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
                     </div>
@@ -51,4 +57,4 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
     )
 }
 
-export default Logo
+export default Logo;

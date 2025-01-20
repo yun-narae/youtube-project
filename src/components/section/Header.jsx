@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import Logo from '../header/Logo';
 import Menu from '../header/Menu';

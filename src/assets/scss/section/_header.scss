@@ -86,7 +86,8 @@ $border-bottom: 4px solid;
         
         li {
             display: inline-block;
-            
+            transition: 0.3s;
+
             a {
                 display: inline-block;
                 padding: 7px 15px;
@@ -114,6 +115,7 @@ $border-bottom: 4px solid;
     border: none;
     display: none;
     flex-shrink: 0;
+    transition: 0.3s;
 
     /* 반응형 설정 */
     @media (max-width: 1200px) {

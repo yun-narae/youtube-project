@@ -21,7 +21,9 @@ export default {
             backgroundColor: color.gray[100],
             textColor: color.gray[800],
             borderColor: color.gray[200],
-            navMenuColor: color.gray[200],
+            navBtnbackColor: color.gray[200],
+            navBtnbackColorHover: color.gray[300],
+            // navListbackColor:
             logoColor: color.black,
         },
         Footer: {
@@ -33,10 +35,11 @@ export default {
             ballColor: color.gray[800],
         },
         Navigation: {
-            navbackgroundColor: color.gray[200],
             activenavbackgroundColor: color.gray[200],
+            hovernavbackgroundColor: color.gray[200],
             keywordBorderColor: color.stone[300],
             activeKeywordBorderColor: color.stone[600],
+            hoverkeywordBorderColor: color.stone[400]
         },
         Main: {
             backgroundColor: color.white,
@@ -76,7 +79,8 @@ export default {
             backgroundColor: color.gray[900],
             textColor: color.gray[100],
             borderColor: color.gray[800],
-            navMenuColor: color.gray[800],
+            navBtnbackColor: color.gray[800],
+            navBtnbackColorHover: color.gray[700],
             logoColor: color.white,
         },
         Footer: {
@@ -88,10 +92,11 @@ export default {
             ballColor: color.gray[200],
         },
         Navigation: {
-            navbackgroundColor: color.gray[200],
             activenavbackgroundColor: color.gray[800],
+            hovernavbackgroundColor: color.gray[800],
             keywordBorderColor: color.stone[700],
             activeKeywordBorderColor: color.stone[400],
+            hoverkeywordBorderColor: color.stone[400],
         },
         Main: {
             backgroundColor: color.black,
