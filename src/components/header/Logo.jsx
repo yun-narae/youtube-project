@@ -6,22 +6,33 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
 
     const {
-        Header: { borderColor, logoColor },
+        textColor,
+        Header: { borderColor, logoColor, navMenuColor },
     } = theme;
 
-    const borderStyles = {
-        borderColor: borderColor,
-    };
+    const styles = {
+        navMenuStyles: {
+            backgroundColor: navMenuColor,
+        },
 
-    const logoStyles = {
-    backgroundColor: logoColor,
-    };
+        textStyles: {
+            color: textColor
+        },
+
+        borderStyles: {
+            borderColor: borderColor,
+        },
+        
+        logoStyles: {
+            backgroundColor: logoColor,
+        }
+    }
 
     return (
         <>
-            <h1 className='header__logo' style={borderStyles}>
+            <h1 className='header__logo' style={styles.borderStyles}>
                 <Link to='/'>
-                    <em aria-hidden='true' style={logoStyles}></em>
+                    <em aria-hidden='true' style={styles.logoStyles}></em>
                     <span>webs<br />youtube</span>
                 </Link>
                     <div
@@ -31,8 +42,9 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
                         tabIndex="0"
                         aria-controls="primary-menu"
                         onClick={toggleMenu}
+                        style={styles.navMenuStyles}
                     >
-                        <span>{isMenuActive ? "햄" : "버거"}</span>
+                        <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
                     </div>
             </h1>
         </>

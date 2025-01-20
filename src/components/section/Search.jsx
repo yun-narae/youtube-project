@@ -47,22 +47,34 @@ const Search = ({ isMenuActive, toggleMenu }) => {
     };
 
     const {
-        SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, textColor},
+        textColor,
+        Header: { navMenuColor },
+        SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, searchtextColor},
     } = theme;
 
-    const innerStyle = {
-        backgroundColor: backgroundColor, borderColor: borderColor,
-    };
+    const styles = {
+        innerStyle: {
+            backgroundColor: backgroundColor, borderColor: borderColor,
+        },
 
-    const inputStyle = {
-        backgroundColor: inputbackgroundColor,
-        borderColor: inputborderColor,
-        color: textColor
-    };
+        textStyles: {
+            color: textColor
+        },
+
+        inputStyle: {
+            backgroundColor: inputbackgroundColor,
+            borderColor: inputborderColor,
+            color: searchtextColor
+        },
+
+        navMenuStyles: {
+            backgroundColor: navMenuColor,
+        },
+    }
 
     return (
     <div id='search'>
-        <div className='search__inner' style={innerStyle}>
+        <div className='search__inner' style={styles.innerStyle}>
             <div
                 className="btn-box"
                 id="headerToggle"
@@ -70,14 +82,15 @@ const Search = ({ isMenuActive, toggleMenu }) => {
                 tabIndex="0"
                 aria-controls="primary-menu"
                 onClick={toggleMenu}
+                style={styles.navMenuStyles}
             >
-                <span>{isMenuActive ? "햄" : "버거"}</span>
+                <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
             </div>
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
             <input 
-                style={inputStyle}
+                style={styles.inputStyle}
                 type='search' 
                 name='searchInput' 
                 id='searchInput'

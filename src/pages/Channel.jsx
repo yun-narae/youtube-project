@@ -4,10 +4,12 @@ import { useParams } from 'react-router-dom';
 import { CiBadgeDollar, CiMedal, CiRead } from 'react-icons/ci';
 import VideoSearch from '../components/videos/VideoSearch';
 import LoadMoreButton from '../components/Button/LoadMoreButton';
+import { useTheme } from '../contexts/theme';
 
 const Channel = () => {
     const [loading, setLoading] = useState(true);
     const { channelId } = useParams();
+    const { theme } = useTheme();
     const [channelDetail, setChannelDetail] = useState(null);
     const [channelVideo, setChannelVideo] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
@@ -122,6 +124,7 @@ const Channel = () => {
                             {nextPageToken && (
                                 <div className="video__more">
                                     <LoadMoreButton
+                                        theme={theme}
                                         onClick={handleLoadMore}
                                         loading={loadingMore}
                                     />

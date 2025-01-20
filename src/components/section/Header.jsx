@@ -7,12 +7,13 @@ const Header = ({ isMenuActive, setIsMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
 
     const {
-        Header: { backgroundColor, textColor },
+        Header: { backgroundColor, textColor, borderColor },
     } = theme;
 
     const boxStyles = {
         backgroundColor: backgroundColor,
-        color: textColor
+        color: textColor,
+        borderColor: borderColor
     };
 
     return (

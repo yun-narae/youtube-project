@@ -4,18 +4,34 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay } from 'swiper/modules';
+import { useTheme } from '../../contexts/theme';
 
 const Developer = ({ videos, title, id }) => {
     const [loading, setLoading] = useState(true);
+    const { theme } = useTheme();
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
         }, 500);
     }, []);
+    
+    const {
+        textColor,
+        Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor},    
+    } = theme;
+
+    const styles = {
+        skeletonLoader: {
+          backgroundColor: SkeletonbackgroundColor,
+        },
+        skeletonCard: {
+          backgroundColor: SkeletoncardbackgroundColor,
+        }
+    }
 
     return (
-        <section id={id}>
+        <section id={id} style={{ color: textColor }}>
             <h2>{title}</h2>
             <div className="developer__inner">
                 <Swiper
@@ -58,9 +74,9 @@ const Developer = ({ videos, title, id }) => {
                     {loading ? 
                         [...new Array(12)].map((_, idx) => (
                               <SwiperSlide key={idx}>
-                                  <div className="skeleton-loader skeleton-loader__developer">
-                                      <div className="skeleton-thumb"></div>
-                                      <div className="skeleton-info"></div>
+                                  <div className="skeleton-loader skeleton-loader__developer" style={styles.skeletonLoader}>
+                                      <div className="skeleton-thumb"  style={styles.skeletonCard}></div>
+                                      <div className="skeleton-info" style={styles.skeletonCard}></div>
                                   </div>
                               </SwiperSlide>
                           ))
