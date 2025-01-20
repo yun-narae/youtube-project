@@ -4,20 +4,19 @@
 .channel__header {
     width: 100%;
     height: 300px;
-    background-color: #969696;
     padding-top: 100px;
     background-position: center center;
     position: relative;
-
+    
     &::after {
         content: '';
         width: 100%;
         height: 100%;
-        background-color: #00000064;
         position: absolute;
         left: 0; 
         top: 0;
     }
+    
     .circle {
         width: 200px;
         height: 200px;
@@ -28,6 +27,7 @@
         top: 150px;
         transform: translateX(-50%);
         z-index: 100;
+        border: 1px solid;
     }
 }
 
@@ -43,13 +43,13 @@
         margin-bottom: 10px;
     }
     .desc {
-        color: #4f4f4f;
+        // color: #4f4f4f;
         margin-bottom: 30px;
         overflow-wrap: anywhere;
     }
     .info span {
-        color: #5e5e5e;
-        background-color: #a6a6a631;
+        // color: #5e5e5e;
+        // background-color: #a6a6a631;
         padding: 10px 20px;
         border-radius: 40px;
         margin: 4px;

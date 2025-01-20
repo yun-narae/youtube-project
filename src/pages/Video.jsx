@@ -15,7 +15,7 @@ const Video = () => {
     const {
         textColor,
         Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor},
-        Video: { DetailbackgroundColor }
+        Video: { VideoDetailbackgroundColor }
     } = theme;
 
     const styles = {
@@ -26,7 +26,7 @@ const Video = () => {
           backgroundColor: SkeletoncardbackgroundColor,
         },
         VideoDetail: {
-            backgroundColor: DetailbackgroundColor
+            backgroundColor: VideoDetailbackgroundColor
         }
     }
 

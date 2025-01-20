@@ -15,6 +15,37 @@ const Channel = () => {
     const [nextPageToken, setNextPageToken] = useState(null);
     const [loadingMore, setLoadingMore] = useState(false);
 
+    const {
+        textColor,
+        Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor},
+        Channel: { headerbackgroundColor, circleborderColor, desctextColor, infobackColor, infotextColor}
+    } = theme;
+
+    const styles = {
+        textStyle: {
+            color: textColor,
+        },
+        skeletonLoader: {
+          backgroundColor: SkeletonbackgroundColor,
+        },
+        skeletonCard: {
+          backgroundColor: SkeletoncardbackgroundColor,
+        },
+        headerStyle: {
+            backgroundColor: headerbackgroundColor,
+        },
+        thumStyle: {
+            borderColor: circleborderColor,
+        },
+        descStyle: {
+            color: desctextColor,
+        },
+        infoStyle: {
+            backgroundColor: infobackColor,
+            color: infotextColor,
+        }
+    }
+
     useEffect(() => {
         const fetchChannelData = async () => {
             try {
@@ -71,18 +102,18 @@ const Channel = () => {
             <section id="channel">
             {loading ? (
                     <>
-                        <div className="skeleton-header">
-                            <div className="skeleton-thumb"></div>
+                        <div className="skeleton-header" style={styles.skeletonLoader}>
+                            <div className="skeleton-thumb" style={styles.skeletonCard}></div>
                         </div>
                         <div className="skeleton-inner__channel">
-                            <div className="skeleton-title"></div>
+                            <div className="skeleton-title" style={styles.skeletonCard}></div>
                             <div className="skeleton-video">
                                 {[...new Array(4)].map((_, idx) => (  // 2개의 스켈레톤 UI 반복 생성
-                                <div key={idx} className="skeleton-loader skeleton-loader__video">
-                                    <div className="skeleton-thumb skeleton-thumb__search"></div>
+                                <div key={idx} className="skeleton-loader skeleton-loader__video" style={styles.skeletonLoader}>
+                                    <div className="skeleton-thumb skeleton-thumb__search" style={styles.skeletonCard}></div>
                                     <div className="skeleton-card">
-                                        <div className="skeleton-info"></div>
-                                        <div className="skeleton-info"></div>
+                                        <div className="skeleton-info" style={styles.skeletonCard}></div>
+                                        <div className="skeleton-info" style={styles.skeletonCard}></div>
                                     </div>
                                 </div>
                                 ))}
@@ -91,8 +122,8 @@ const Channel = () => {
                     </>
                 ) : channelDetail ? (
                     <>
-                        <div className="channel__header">
-                            <div className="circle">
+                        <div className="channel__header" style={styles.headerStyle}>
+                            <div className="circle" style={styles.thumStyle}>
                                 <img
                                     src={channelDetail.snippet.thumbnails.high.url}
                                     alt={channelDetail.snippet.title}
@@ -101,18 +132,18 @@ const Channel = () => {
                         </div>
                         <div className="channel__inner">
                             <div className="channel__info">
-                                <h3 className="title">{channelDetail.snippet.title}</h3>
-                                <p className="desc">{channelDetail.snippet.description}</p>
+                                <h3 className="title" style={styles.textStyle}>{channelDetail.snippet.title}</h3>
+                                <p className="desc" style={styles.descStyle}>{channelDetail.snippet.description}</p>
                                 <div className="info">
-                                    <span>
+                                    <span style={styles.infoStyle}>
                                         <CiBadgeDollar />
                                         {channelDetail.statistics.subscriberCount}
                                     </span>
-                                    <span>
+                                    <span style={styles.infoStyle}>
                                         <CiMedal />
                                         {channelDetail.statistics.videoCount}
                                     </span>
-                                    <span>
+                                    <span style={styles.infoStyle}>
                                         <CiRead />
                                         {channelDetail.statistics.viewCount}
                                     </span>

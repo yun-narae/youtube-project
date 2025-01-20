@@ -64,7 +64,14 @@ export default {
             SkeletoncardbackgroundColor: color.gray[200],
         },
         Video: {
-            DetailbackgroundColor: color.gray[100],
+            VideoDetailbackgroundColor: color.gray[100],
+        },
+        Channel: {
+            headerbackgroundColor: color.gray[100],
+            circleborderColor: color.gray[100],
+            desctextColor: color.gray[600],
+            infobackColor: color.gray[100],
+            infotextColor: color.gray[700],
         }
     },
     [THEME_MODE.DARK]: {
@@ -122,7 +129,14 @@ export default {
             SkeletoncardbackgroundColor: color.gray[900],
         },
         Video: {
-            DetailbackgroundColor: color.gray[900],
+            VideoDetailbackgroundColor: color.gray[900],
+        },
+        Channel: {
+            headerbackgroundColor: color.gray[900],
+            circleborderColor: color.gray[800],
+            desctextColor: color.gray[500],
+            infobackColor: color.gray[800],
+            infotextColor: color.gray[500],
         }
     },
 };
