@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import { Link } from 'react-router-dom';
+import NavToggle from '../Button/NavToggle';
 
 const Logo = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
-    const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
-    const [isFocused, setIsFocused] = useState(false); // focus 상태 관리
 
     const {
         textColor,
@@ -41,7 +40,7 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
                     <em aria-hidden='true' style={styles.logoStyles}></em>
                     <span>webs<br />youtube</span>
                 </Link>
-                <div
+                {/* <div
                     className="btn-box"
                     id="headerToggle"
                     role="button"
@@ -59,7 +58,14 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
                     }}
                 >
                     <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
-                </div>
+                </div> */}
+                <NavToggle 
+                    isMenuActive={isMenuActive}
+                    toggleMenu={toggleMenu}
+                    navBtnbackColor={navBtnbackColor}
+                    navBtnbackColorHover={navBtnbackColorHover}
+                    textColor={textColor}
+                />
             </h1>
         </>
     );

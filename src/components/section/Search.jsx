@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import { useNavigate } from 'react-router-dom';
+import NavToggle from '../Button/NavToggle';
 
 let debounceTimer; // 컴포넌트 외부에 변수 선언
 
 const Search = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
-    const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
-    const [isFocused, setIsFocused] = useState(false); // focus 상태 관리
     const [ searchKeyword, setSearchKeyword ] = useState('');
     const navigate = useNavigate();
 
@@ -82,25 +81,13 @@ const Search = ({ isMenuActive, toggleMenu }) => {
     return (
     <div id='search'>
         <div className='search__inner' style={styles.innerStyle}>
-            <div
-                className="btn-box"
-                id="headerToggle"
-                role="button"
-                tabIndex="0"
-                aria-controls="primary-menu"
-                onClick={toggleMenu}
-                onMouseEnter={() => setIsHovered(true)} // hover 시작
-                onMouseLeave={() => setIsHovered(false)} // hover 종료
-                onFocus={() => setIsFocused(true)} // focus 시작
-                onBlur={() => setIsFocused(false)} // focus 종료
-                style={{
-                    ...styles.navMenuStyles, 
-                    ...(isHovered ? styles.navMenuHoverStyles : {}),
-                        ...(isFocused ? styles.navMenuHoverStyles : {}), // focus 스타일 적용
-                }}
-            >
-                <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
-            </div>
+                <NavToggle 
+                    isMenuActive={isMenuActive}
+                    toggleMenu={toggleMenu}
+                    navBtnbackColor={navBtnbackColor}
+                    navBtnbackColorHover={navBtnbackColorHover}
+                    textColor={textColor}
+                />
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
