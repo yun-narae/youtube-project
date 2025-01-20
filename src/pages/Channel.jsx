@@ -78,7 +78,7 @@ const Channel = () => {
                             <div className="skeleton-title"></div>
                             <div className="skeleton-video">
                                 {[...new Array(4)].map((_, idx) => (  // 2개의 스켈레톤 UI 반복 생성
-                                <div className="skeleton-loader skeleton-loader__video">
+                                <div key={idx} className="skeleton-loader skeleton-loader__video">
                                     <div className="skeleton-thumb skeleton-thumb__search"></div>
                                     <div className="skeleton-card">
                                         <div className="skeleton-info"></div>
@@ -119,7 +119,10 @@ const Channel = () => {
                                 </div>
                             </div>
                             <div className="channel__video video__inner search">
-                                <VideoSearch videos={channelVideo} />
+                                <VideoSearch
+                                    theme={theme}
+                                    videos={channelVideo}
+                                />
                             </div>
                             {nextPageToken && (
                                 <div className="video__more">
