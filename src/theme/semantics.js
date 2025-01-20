@@ -15,7 +15,8 @@ export default {
         accentColor: color.gray[500],
 
         Button: {
-            backgroundColor: color.gray[100],
+            buttonback: color.gray[100],
+            hoverbuttonback: color.gray[300],
         },
         Header: {
             backgroundColor: color.gray[100],
@@ -73,7 +74,8 @@ export default {
         accentColor: color.gray[500],
         
         Button: {
-            backgroundColor: color.gray[900],
+            buttonback: color.gray[900],
+            hoverbuttonback: color.gray[700],
         },
         Header: {
             backgroundColor: color.gray[900],

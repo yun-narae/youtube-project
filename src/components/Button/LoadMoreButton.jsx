@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LoadMoreButton = ({ onClick, loading, theme }) => {
+    const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
+
     const {
         textColor,
-        Button: { backgroundColor},
+        Button: { buttonback, hoverbuttonback },
     } = theme;
 
     const styles = {
-        // textColor: { color: textColor },
         buttonStyle: {
-            backgroundColor:backgroundColor,
+            backgroundColor: buttonback,
             color: textColor
         }
     }
@@ -18,7 +19,9 @@ const LoadMoreButton = ({ onClick, loading, theme }) => {
         <button
             onClick={onClick}
             disabled={loading}
-            style={styles.buttonStyle}
+            style={{...styles.buttonStyle, backgroundColor: isHovered ? hoverbuttonback : '' }}
+            onMouseEnter={() => setIsHovered(true)} // hover 시작
+                onMouseLeave={() => setIsHovered(false)} // hover 종료
         >
             {loading ? '로딩 중...' : '더보기'}
         </button>
