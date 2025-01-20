@@ -23,8 +23,7 @@ export default {
             textColor: color.gray[800],
             borderColor: color.gray[200],
             navBtnbackColor: color.gray[200],
-            navBtnbackColorHover: color.gray[300],
-            // navListbackColor:
+            navBtnbackColorHover: color.gray[400],
             logoColor: color.black,
         },
         Footer: {
@@ -82,7 +81,7 @@ export default {
             textColor: color.gray[100],
             borderColor: color.gray[800],
             navBtnbackColor: color.gray[800],
-            navBtnbackColorHover: color.gray[700],
+            navBtnbackColorHover: color.gray[600],
             logoColor: color.white,
         },
         Footer: {

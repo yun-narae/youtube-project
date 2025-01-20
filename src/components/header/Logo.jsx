@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Logo = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
     const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
+    const [isFocused, setIsFocused] = useState(false); // focus 상태 관리
 
     const {
         textColor,
@@ -14,6 +15,10 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
     const styles = {
         navMenuStyles: {
             backgroundColor: navBtnbackColor,
+        },
+
+        navMenuHoverStyles: {
+            backgroundColor: navBtnbackColorHover,
         },
 
         textStyles: {
@@ -27,7 +32,7 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
         logoStyles: {
             backgroundColor: logoColor,
         }
-    }
+    };
 
     return (
         <>
@@ -36,25 +41,28 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
                     <em aria-hidden='true' style={styles.logoStyles}></em>
                     <span>webs<br />youtube</span>
                 </Link>
-                    <div
-                        className="btn-box"
-                        id="headerToggle"
-                        role="button"
-                        tabIndex="0"
-                        aria-controls="primary-menu"
-                        onClick={toggleMenu}
-                        onMouseEnter={() => setIsHovered(true)} // hover 시작
-                        onMouseLeave={() => setIsHovered(false)} // hover 종료
-                        style={{
-                            ...styles.navMenuStyles, 
-                            backgroundColor: isHovered ? navBtnbackColorHover : navBtnbackColor // 조건부로 배경색 변경
-                        }}
-                    >
-                        <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
-                    </div>
+                <div
+                    className="btn-box"
+                    id="headerToggle"
+                    role="button"
+                    tabIndex="0"
+                    aria-controls="primary-menu"
+                    onClick={toggleMenu}
+                    onMouseEnter={() => setIsHovered(true)} // hover 시작
+                    onMouseLeave={() => setIsHovered(false)} // hover 종료
+                    onFocus={() => setIsFocused(true)} // focus 시작
+                    onBlur={() => setIsFocused(false)} // focus 종료
+                    style={{
+                        ...styles.navMenuStyles, 
+                        ...(isHovered ? styles.navMenuHoverStyles : {}),
+                        ...(isFocused ? styles.navMenuHoverStyles : {}), // focus 스타일 적용
+                    }}
+                >
+                    <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
+                </div>
             </h1>
         </>
-    )
-}
+    );
+};
 
 export default Logo;
