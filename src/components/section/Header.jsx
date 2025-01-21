@@ -1,32 +1,23 @@
-import { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import Logo from '../header/Logo';
 import Menu from '../header/Menu';
 
-const Header = () => {
+const Header = ({ isMenuActive, setIsMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
-    const [ isMenuActive, setIsMenuActive ] = useState(false);
-
-
-
-    const toggleMenu = () => {
-        setIsMenuActive(!isMenuActive);
-    }
 
     const {
-        Header: { backgroundColor, textColor },
+        Header: { backgroundColor, textColor, borderColor },
     } = theme;
 
     const boxStyles = {
         backgroundColor: backgroundColor,
-        color: textColor
+        color: textColor,
+        borderColor: borderColor
     };
-
-
 
     return (
         <header id='header' role='banner' style={boxStyles} className={isMenuActive ? 'active' : ''}>
-            <Logo toggleMenu={toggleMenu}/>
+            <Logo toggleMenu={toggleMenu} isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
             <Menu />
         </header>
     )

@@ -10,14 +10,32 @@ $border-bottom: 4px solid;
     height: 100%;
     overflow-y: auto;
     z-index: 10000;
+    border-right: 2px solid;
+    
+    @media (max-width: 1200px) {
+        .header__sns {
+            position: unset;
+        }
+        
+        &.active {
+            left: 0;
+        }
+
+        .switch {
+            padding-bottom: 60px;
+        }
+    }
 }
 
 .header__logo {
     border-bottom: $border-bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
 
     a {
         display: flex;
-        padding: 10px;
 
         em {
             width: 40px;
@@ -40,6 +58,7 @@ $border-bottom: 4px solid;
     .menu {
         border-bottom: $border-bottom;
         padding: 20px 0;
+
         li {
             a {
                 font-size: var(font-size);
@@ -68,7 +87,8 @@ $border-bottom: 4px solid;
         
         li {
             display: inline-block;
-            
+            transition: 0.3s;
+
             a {
                 display: inline-block;
                 padding: 7px 15px;
@@ -83,6 +103,27 @@ $border-bottom: 4px solid;
     }
 }
 
+.btn-box {
+    cursor: pointer;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 100%도 가능 */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    display: none;
+    flex-shrink: 0;
+    transition: 0.3s;
+
+    /* 반응형 설정 */
+    @media (max-width: 1200px) {
+        display: flex;
+    }
+}
+
 .switch {
     padding: 1.25rem;
     display: flex;
@@ -92,7 +133,6 @@ $border-bottom: 4px solid;
     
     .btn {
         --ratio: 3;
-        
         margin-right: 12px;
         display: block;
         block-size: 20px;
@@ -153,10 +193,12 @@ $border-bottom: 4px solid;
         transform: rotate(0) scale(1);
         border-radius: 0;
     }
+
     50% {
         transform: rotate(720deg) scale(0.5);
         border-radius: 20px;
     }
+    
     100% {
         transform: rotate(0) scale(1);
         border-radius: 0;

@@ -3,13 +3,17 @@ import { useParams } from 'react-router-dom'
 import Main from '../components/section/Main';
 import VideoSearch from '../components/videos/VideoSearch';
 import LoadMoreButton from '../components/Button/LoadMoreButton';
+import { useTheme } from '../contexts/theme';
 
 const Search = () => {
+    const { theme } = useTheme();
     const { searchId } = useParams();
     const [videos, setVideos] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
     const [loadingMore, setLoadingMore] = useState(false);
     const [loading, setLoading] = useState(true);
+
+    const textColor = theme.textColor;
 
     useEffect(() => {
         const fetchInitialVideos = async () => {
@@ -60,13 +64,14 @@ const Search = () => {
             description="유튜브 검색 결과 페이지입니다."
         >    
             <section id="searchPage">
-                <h2><em>{searchId}</em> 검색 결과입니다.</h2>
+                <h2 style={{ color: textColor }}><em>{searchId}</em> 검색 결과입니다.</h2>
                 <div className="video__inner search">
-                    <VideoSearch videos={videos} loading={loading} />
+                    <VideoSearch videos={videos} loading={loading} theme={theme}/>
                 </div>
                 {nextPageToken && (
                     <div className="video__more">
                         <LoadMoreButton
+                            theme={theme}
                             onClick={handleLoadMore}
                             loading={loadingMore}
                         />

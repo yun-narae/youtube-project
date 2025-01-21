@@ -4,11 +4,31 @@ import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 import { CiChat1, CiStar, CiRead } from 'react-icons/ci';
+import { useTheme } from '../contexts/theme';
 
 const Video = () => {
+    const { theme } = useTheme();
     const { videoId } = useParams();
     const [videoDetail, setVideoDetail] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const {
+        textColor,
+        Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor},
+        Video: { VideoDetailbackgroundColor }
+    } = theme;
+
+    const styles = {
+        skeletonLoader: {
+          backgroundColor: SkeletonbackgroundColor,
+        },
+        skeletonCard: {
+          backgroundColor: SkeletoncardbackgroundColor,
+        },
+        VideoDetail: {
+            backgroundColor: VideoDetailbackgroundColor
+        }
+    }
 
     useEffect(() => {
         const fetchVideoDetail = async () => {
@@ -35,14 +55,14 @@ const Video = () => {
             title="유튜브 비디오 영상"
             description="유튜브 비디오 영상을 볼 수 있습니다."
         >
-            <section id="videoViewPage">
+            <section id="videoViewPage" style={{ color: textColor }}>
                 <div className="video__view">
                     {loading ? (
                         <div className="skeleton-loader__videoView">
-                            <div className="skeleton-thumb skeleton-thumb__videoView"></div>
+                            <div className="skeleton-thumb skeleton-thumb__videoView" style={styles.skeletonLoader}></div>
                             <div className="skeleton-card__videoView">
-                                <div className="skeleton-title"></div>
-                                <div className="skeleton-info"></div>
+                                <div className="skeleton-title" style={styles.skeletonCard}></div>
+                                <div className="skeleton-info" style={styles.skeletonCard}></div>
                             </div>
                         </div>
                     ) : (
@@ -59,7 +79,7 @@ const Video = () => {
                                 </div>
                                 <div className="video__info">
                                     <h2 className="video__title">{videoDetail.snippet.title}</h2>
-                                    <div className="video__channel">
+                                    <div className="video__channel" style={styles.VideoDetail}>
                                         <div className="id">
                                             <Link to={`/channel/${videoDetail.snippet.channelId}`}>
                                                 {videoDetail.snippet.channelTitle}
@@ -80,7 +100,9 @@ const Video = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="video__desc">{videoDetail.snippet.description}</div>
+                                    <div className="video__desc">
+                                        {videoDetail.snippet.description}
+                                    </div>
                                 </div>
                             </>
                         )

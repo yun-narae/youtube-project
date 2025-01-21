@@ -1,22 +1,35 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const VideoSearch = ({ videos, loading }) => {
+const VideoSearch = ({ videos, loading, theme }) => {
+    const {
+        Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor}
+    } = theme;
+
+    const styles = {
+        skeletonLoader: {
+          backgroundColor: SkeletonbackgroundColor,
+        },
+        skeletonCard: {
+          backgroundColor: SkeletoncardbackgroundColor,
+        }
+    }
+
     return (
         <>
             {loading ? (
-                [...new Array(4)].map((_, idx) => (  // 2개의 스켈레톤 UI 반복 생성
-                <div className="skeleton-loader skeleton-loader__video">
-                    <div className="skeleton-thumb skeleton-thumb__search"></div>
+                [...new Array(4)].map((_, key) => (  // 2개의 스켈레톤 UI 반복 생성
+                <div key={key} className="skeleton-loader skeleton-loader__video" style={styles.skeletonLoader}>
+                    <div className="skeleton-thumb skeleton-thumb__search" style={styles.skeletonCard}></div>
                     <div className="skeleton-card">
-                        <div className="skeleton-info"></div>
-                        <div className="skeleton-info"></div>
+                        <div className="skeleton-info" style={styles.skeletonCard}></div>
+                        <div className="skeleton-info" style={styles.skeletonCard}></div>
                     </div>
                 </div>
                 ))
             ) : (
-                videos.map((video, index) => (
-                    <div className="video" key={index}>
+                videos.map((video, key) => (
+                    <div className="video" key={key}>
                         <div className="video__thumb play__icon">
                             <Link 
                                 to={`/video/${video.id.videoId}`} 

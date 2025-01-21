@@ -12,6 +12,16 @@ section {
     }
 }
 
+// Home에 나열되는 section 패딩값
+#home {
+    section {
+        padding: 40px;
+        @media (max-width: 1200px){
+            padding: 30px 20px;
+        }
+    }
+}
+
 // 마우스 오버 아이콘
 .play__icon {
     a {

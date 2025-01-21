@@ -3,12 +3,28 @@ import { Link } from 'react-router-dom';
 import Main from '../components/section/Main';
 import { developerText } from '../data/developer';
 import LoadMoreButton from '../components/Button/LoadMoreButton';
+import { useTheme } from '../contexts/theme';
 
 const Developer = () => {
     const [loading, setLoading] = useState(true);
+    const { theme } = useTheme();
     const [displayedDevelopers, setDisplayedDevelopers] = useState([]);
     const [showMore, setShowMore] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 780);
+
+    const {
+        textColor,
+        Skeleton: { SkeletonbackgroundColor, SkeletoncardbackgroundColor}
+    } = theme;
+
+    const styles = {
+        skeletonLoader: {
+          backgroundColor: SkeletonbackgroundColor,
+        },
+        skeletonCard: {
+          backgroundColor: SkeletoncardbackgroundColor,
+        },
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -51,14 +67,17 @@ const Developer = () => {
             description="오늘의 추천 개발자 유튜버입니다."
         >
             <section id="developerPage">
-                <h2>추천 개발자</h2>
+                <h2 style={{ color: textColor }}>추천 개발자</h2>
                     {loading ? (
                         // 로딩 중일 때 스켈레톤 UI 표시
                         <div className="skeleton-inner__developerPage">
                             {[...new Array(12)].map((_, idx) => (
-                                <div key={idx} className="skeleton-loader skeleton-loader__developerPage">
-                                    <div className="skeleton-thumb"></div>
-                                    <div className="skeleton-info"></div>
+                                <div key={idx}
+                                     className="skeleton-loader skeleton-loader__developerPage"
+                                     style={styles.skeletonLoader}
+                                >
+                                    <div className="skeleton-thumb" style={styles.skeletonCard}></div>
+                                    <div className="skeleton-info" style={styles.skeletonCard}></div>
                                 </div>
                             ))}
                         </div>
@@ -74,7 +93,7 @@ const Developer = () => {
                                 </div>
                                 <div className="developer__info">
                                     <Link to={`/channel/${developer.channelId}`}>
-                                        <p>{developer.name}</p>
+                                        <p style={{ color: textColor }}>{developer.name}</p>
                                     </Link>
                                 </div>
                             </div>
@@ -83,7 +102,7 @@ const Developer = () => {
                     )}
                 {showMore && !loading && (
                     <div className="video__more">
-                        <LoadMoreButton onClick={handleLoadMore} loading={false} />
+                        <LoadMoreButton onClick={handleLoadMore} loading={false} theme={theme}/>
                     </div>
                 )}
             </section>

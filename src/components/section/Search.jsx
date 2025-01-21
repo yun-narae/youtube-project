@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import { useNavigate } from 'react-router-dom';
+import NavToggle from '../Button/NavToggle';
 
 let debounceTimer; // 컴포넌트 외부에 변수 선언
 
-const Search = () => {
+const Search = ({ isMenuActive, toggleMenu }) => {
     const { theme } = useTheme();
     const [ searchKeyword, setSearchKeyword ] = useState('');
     const navigate = useNavigate();
@@ -47,27 +48,51 @@ const Search = () => {
     };
 
     const {
-        SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, textColor},
+        textColor,
+        Header: { navBtnbackColor, navBtnbackColorHover },
+        SearchInput: { backgroundColor, borderColor, inputbackgroundColor, inputborderColor, searchtextColor},
     } = theme;
 
-    const innerStyle = {
-        backgroundColor: backgroundColor, borderColor: borderColor,
-    };
+    const styles = {
+        innerStyle: {
+            backgroundColor: backgroundColor, 
+            borderColor: borderColor,
+        },
 
-    const inputStyle = {
-        backgroundColor: inputbackgroundColor,
-        borderColor: inputborderColor,
-        color: textColor
-    };
+        textStyles: {
+            color: textColor
+        },
+
+        inputStyle: {
+            backgroundColor: inputbackgroundColor,
+            borderColor: inputborderColor,
+            color: searchtextColor
+        },
+
+        navMenuStyles: {
+            backgroundColor: navBtnbackColor,
+        },
+
+        navMenuHoverStyles: {
+            backgroundColor: navBtnbackColorHover,
+        },
+    }
 
     return (
     <div id='search'>
-        <div className='search__inner' style={innerStyle}>
+        <div className='search__inner' style={styles.innerStyle}>
+                <NavToggle 
+                    isMenuActive={isMenuActive}
+                    toggleMenu={toggleMenu}
+                    navBtnbackColor={navBtnbackColor}
+                    navBtnbackColorHover={navBtnbackColorHover}
+                    textColor={textColor}
+                />
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
             <input 
-                style={inputStyle}
+                style={styles.inputStyle}
                 type='search' 
                 name='searchInput' 
                 id='searchInput'

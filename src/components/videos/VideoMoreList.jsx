@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadMoreButton from '../Button/LoadMoreButton';
 
-const VideoMoreList = ({ items, breakpoint = 780, mobileCount = 10, desktopCount = 20 }) => {
+const VideoMoreList = ({ items, breakpoint = 780, mobileCount = 10, desktopCount = 20, theme }) => {
     const [displayedItems, setDisplayedItems] = useState([]); // 비디오 아이템을 화면에 표시할 상태
     const [showMore, setShowMore] = useState(false); // "더보기" 버튼의 표시 여부 상태 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint); // 현재 화면 크기가 모바일인지 확인하는 상태
@@ -56,7 +56,7 @@ const VideoMoreList = ({ items, breakpoint = 780, mobileCount = 10, desktopCount
             {/* "더보기" 버튼, 아직 로드할 비디오가 남아있으면 표시 */}
             {showMore && (
                 <div className="video__more">
-                    <LoadMoreButton onClick={handleLoadMore} loading={false} />  {/* 더보기 버튼 클릭 시 handleLoadMore 실행 */}
+                    <LoadMoreButton onClick={handleLoadMore} loading={false} theme={theme}/>  {/* 더보기 버튼 클릭 시 handleLoadMore 실행 */}
                 </div>
             )}
         </>
