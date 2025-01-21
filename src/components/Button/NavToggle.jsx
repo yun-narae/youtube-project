@@ -8,7 +8,6 @@ const NavToggle = ({ isMenuActive, toggleMenu, navBtnbackColor, navBtnbackColorH
         <button
             className="btn-box"
             id="headerToggle"
-            role="button"
             tabIndex="0"
             aria-controls="primary-menu"
             onClick={toggleMenu}

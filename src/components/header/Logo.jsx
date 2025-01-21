@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useTheme } from '../../contexts/theme';
 import { Link } from 'react-router-dom';
 import NavToggle from '../Button/NavToggle';
