@@ -3,6 +3,7 @@ import Main from '../components/section/Main'
 import { todayText } from '../data/Today'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/theme'
+import Icon from '../components/Icon/Icon'
 
 const Today = () => {
     const { theme } = useTheme();
@@ -65,9 +66,14 @@ const Today = () => {
                 ) : (
                     todayText.map((today, key) => (
                         <div className='today__inner' key={key} style={styles.inner}>
-                            <div className='today__thumb play__icon'>
+                            <div className='today__thumb play__icon-frame'>
                                 <Link to={today.page}>
                                     <img src={today.img} alt={today.title} />
+                                    <Icon
+                                        name="play"
+                                        size={40}
+                                        className="play__icon"
+                                    />
                                 </Link>
                             </div>
                             <div className='today__card'>

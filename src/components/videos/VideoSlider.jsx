@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { useTheme } from '../../contexts/theme';
+import Icon from '../Icon/Icon';
 
 const VideoSlider = ({ videos, title, id }) => {
     const [loading, setLoading] = useState(true);
@@ -72,9 +73,14 @@ const VideoSlider = ({ videos, title, id }) => {
                     videos.map((video, key) => (
                     <SwiperSlide key={key}>
                         <div className="video" >
-                            <div className="video__thumb play__icon">
+                            <div className="video__thumb play__icon-frame">
                                 <Link to={`/video/${video.videoId}`}>
                                     <img src={video.img} alt={video.title} />
+                                    <Icon
+                                        name="play"
+                                        size={40}
+                                        className="play__icon"
+                                    />
                                 </Link>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../contexts/theme';
+import Icon from '../Icon/Icon';
 
 const Today = ({ videos, title, id}) => {
     const [loading, setLoading] = useState(true);
@@ -55,9 +56,14 @@ const Today = ({ videos, title, id}) => {
                 <>
                     <h2>{title}</h2>
                     <div className='today__inner' style={styles.innerStyle}>
-                        <div className='today__thumb play__icon'>
+                        <div className='today__thumb play__icon-frame'>
                             <Link to={videos[0].page}>
                                 <img src={videos[0].img} alt={videos[0].title} />
+                                <Icon
+                                    name="play"
+                                    size={40}
+                                    className="play__icon"
+                                />
                             </Link>
                         </div>
                         <div className='today__card'>

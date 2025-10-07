@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { useTheme } from '../../contexts/theme';
+import Icon from '../Icon/Icon';
 
 const Developer = ({ videos, title, id }) => {
     const [loading, setLoading] = useState(true);
@@ -83,10 +84,15 @@ const Developer = ({ videos, title, id }) => {
                         : videos.map((developer, key) => (
                               <SwiperSlide key={key}>
                                   <div className="developer">
-                                      <div className="developer__img play__icon">
-                                          <Link to={`/channel/${developer.channelId}`}>
-                                              <img src={developer.img} alt={developer.name} />
-                                          </Link>
+                                      <div className="developer__img play__icon-frame">
+                                            <Link to={`/channel/${developer.channelId}`}>
+                                                <img src={developer.img} alt={developer.name} />
+                                                <Icon
+                                                    name="play"
+                                                    size={40}
+                                                    className="play__icon"
+                                                />
+                                            </Link>
                                       </div>
                                       <div className="developer__info">
                                           <Link to={`/channel/${developer.channelId}`}>
