@@ -98,7 +98,7 @@ export const searchKeyword = [
     },
     {
         title: "music",
-        src: "/search/NewJeans"
+        src: "/search/music"
     }
 ];
 
