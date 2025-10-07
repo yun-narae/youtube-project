@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { headerMenus, searchKeyword } from '../../data/header';
 import { useTheme } from '../../contexts/theme';
-import Sns from './Sns';
 import AppSwitch from '../AppSwitch';
 
 const Menu = () => {
@@ -135,7 +134,6 @@ const Menu = () => {
                 <AppSwitch value={isDarkMode} onToggle={handleToggle} ratio={2} />
                 {isDarkMode ? '다크' : '라이트'} 모드
             </div>
-            <Sns />
         </nav>
     );
 };
