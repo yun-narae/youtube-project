@@ -1,28 +1,51 @@
-.swiper-button-prev.swiper-button-disabled, 
-.swiper-button-next.swiper-button-disabled {
-    opacity: 0 !important;
-}
-.swiper-button-next:after, 
-.swiper-button-prev:after {
-    color: #fff !important;
-    font-size: 30px !important;
-}
-.swiper-pagination-bullet {
-    background-color: #fff !important;
-}
-.swiper-button-next {
-    background-color: #00000069;
-    right: 0 !important;
-    top: 40% !important;
-}
-.swiper-button-prev {
-    background-color: #00000069;
-    left: 0 !important;
-    top: 40% !important;
-}
-.video__slider .swiper-button-next {
-    top: 50% !important;
-}
-.video__slider .swiper-button-prev {
-    top: 50% !important;
+/* 예: src/assets/scss/components/_swiper.scss */
+
+.video__slider {
+    position: relative;
+
+    /* 기본 Swiper 화살표는 숨김(커스텀만 사용) */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+
+    .swiper-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.65);
+        color: #fff;                 /* Icon이 currentColor 사용 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 0;
+        transition: background .2s ease, opacity .2s ease, transform .2s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,.25);
+
+        &:hover { background: rgba(0,0,0,.8); }
+        &:active { transform: translateY(-50%) scale(0.98); }
+        &.swiper-button-disabled { opacity: .35; pointer-events: none; }
+    }
+
+    .swiper-prev { left: 8px; }
+    .swiper-next { right: 8px; }
+
+    /* ▶ play__icon 기본 절대배치 무효화 (네비 내부에서만) */
+    .swiper-nav .play__icon {
+        position: static !important;
+        transform: none !important;
+        display: block !important;
+    }
+
+    /* 반응형 여백/크기 */
+    @media (min-width: 768px) {
+        .swiper-nav { width: 48px; height: 48px; }
+        .swiper-prev { left: 10px; }
+        .swiper-next { right: 10px; }
+    }
 }
