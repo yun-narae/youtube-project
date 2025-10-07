@@ -1,4 +1,8 @@
 section {
+    &:nth-child(1){
+        margin-top: 70px;
+    }
+
     padding: 40px;
 
     @media (max-width: 1200px){

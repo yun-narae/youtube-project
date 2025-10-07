@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../contexts/theme';
 
-const Today = ({ videos, id}) => {
+const Today = ({ videos, title, id}) => {
     const [loading, setLoading] = useState(true);
     const { theme } = useTheme();
 
@@ -52,26 +52,29 @@ const Today = ({ videos, id}) => {
                         </div>
                     </div>
             ) : (
-                <div className='today__inner' style={styles.innerStyle}>
-                    <div className='today__thumb play__icon'>
-                        <Link to={videos[0].page}>
-                            <img src={videos[0].img} alt={videos[0].title} />
-                        </Link>
-                    </div>
-                    <div className='today__card'>
-                        <span className='label' style={styles.labelStyle}>today</span>
-                        <Link to={videos[0].page} style={styles.textStyle}>
-                            <h3 className='title'>{videos[0].title}</h3>
-                            <p className='desc'>{videos[0].desc}</p>
-                        </Link>
-                        <div className='info' style={styles.textinfoStyle}>
-                            <Link to={`/channel/${videos[0].channelId}`}>
-                                <span className='author'>{videos[0].author}</span>
+                <>
+                    <h2>{title}</h2>
+                    <div className='today__inner' style={styles.innerStyle}>
+                        <div className='today__thumb play__icon'>
+                            <Link to={videos[0].page}>
+                                <img src={videos[0].img} alt={videos[0].title} />
                             </Link>
-                            <span className='date'>{videos[0].date}</span>
+                        </div>
+                        <div className='today__card'>
+                            <span className='label' style={styles.labelStyle}>today</span>
+                            <Link to={videos[0].page} style={styles.textStyle}>
+                                <h3 className='title'>{videos[0].title}</h3>
+                                <p className='desc'>{videos[0].desc}</p>
+                            </Link>
+                            <div className='info' style={styles.textinfoStyle}>
+                                <Link to={`/channel/${videos[0].channelId}`}>
+                                    <span className='author'>{videos[0].author}</span>
+                                </Link>
+                                <span className='date'>{videos[0].date}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </>
             )}
         </section>
     )
