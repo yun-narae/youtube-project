@@ -7,11 +7,6 @@ import { CiDumbbell } from "react-icons/ci";
 import { CiFries } from "react-icons/ci";
 import { CiMoneyBill } from "react-icons/ci";
 
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlineCodepen } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
-
 export const headerMenus = [
     {
         title: "홈",
