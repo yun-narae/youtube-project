@@ -7,14 +7,9 @@ import { CiDumbbell } from "react-icons/ci";
 import { CiFries } from "react-icons/ci";
 import { CiMoneyBill } from "react-icons/ci";
 
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlineCodepen } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
-
 export const headerMenus = [
     {
-        title: "웹스토리보이",
+        title: "홈",
         icon: <CiBaseball />,
         src: "/"
     },
@@ -98,29 +93,6 @@ export const searchKeyword = [
     },
     {
         title: "music",
-        src: "/search/NewJeans"
+        src: "/search/music"
     }
 ];
-
-export const snsLink = [
-    {
-        title: "github",
-        url: "https://github.com/webstoryboy",
-        icon: <AiFillGithub />
-    },
-    {
-        title: "youtube",
-        url: "https://www.youtube.com/webstoryboy",
-        icon: <AiFillYoutube />
-    },
-    {
-        title: "codepen",
-        url: "https://codepen.io/webstoryboy",
-        icon: <AiOutlineCodepen />
-    },
-    {
-        title: "instagram",
-        url: "https://www.instagram.com/webstoryboy",
-        icon: <AiOutlineInstagram />
-    },
-]

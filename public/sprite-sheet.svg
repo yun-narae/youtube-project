@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="arrow-down" viewBox="0 0 24 24">
+        <g clip-path="url(#clip-arrow-down)">
+            <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M5.25 10L12 16.75 18.75 10" />
+        </g>
+        <defs>
+            <clipPath id="clip-arrow-down">
+                <rect width="24" height="24" fill="currentColor" rx="12" />
+            </clipPath>
+        </defs>
+    </symbol>
+
+    <symbol id="arrow-left" viewBox="0 0 24 24">
+        <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M14.75 5.25L8 12l6.75 6.75" />
+    </symbol>
+
+    <symbol id="arrow-right" viewBox="0 0 24 24">
+        <g clip-path="url(#clip-arrow-right)">
+            <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 5.25L15.75 12 9 18.75" />
+        </g>
+        <defs>
+            <clipPath id="clip-arrow-right">
+                <rect width="24" height="24" rx="12" />
+            </clipPath>
+        </defs>
+    </symbol>
+
+    <symbol id="arrow-up" viewBox="0 0 24 24">
+        <g clip-path="url(#clip-arrow-up)">
+            <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M5.25 14.75L12 8l6.75 6.75" />
+        </g>
+        <defs>
+            <clipPath id="clip-arrow-up">
+                <path fill="currentColor" d="M0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z" />
+            </clipPath>
+        </defs>
+    </symbol>
+    
+    <symbol id="menu" viewBox="0 0 24 24">
+        <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M3.75 12h16.5M3.75 6h16.5M3.75 18h16.5" />
+    </symbol>
+    
+    <symbol id="delete" viewBox="0 0 24 24">
+        <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M18.75 5.25l-13.5 13.5m13.5 0L5.25 5.25" />
+    </symbol>
+
+    <symbol id="play" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.562,21.94a2.5,2.5,0,0,1-2.5-2.5V4.56A2.5,2.5,0,0,1,7.978,2.5L18.855,9.939a2.5,2.5,0,0,1,0,4.12L7.977,21.5A2.5,2.5,0,0,1,6.562,21.94Zm0-18.884a1.494,1.494,0,0,0-.7.177,1.477,1.477,0,0,0-.8,1.327V19.439a1.5,1.5,0,0,0,2.35,1.235l10.877-7.44a1.5,1.5,0,0,0,0-2.471L7.413,3.326A1.491,1.491,0,0,0,6.564,3.056Z"/>
+    </symbol>
+
+    <svg id="search" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31 c0-4.39-3.57-7.96-7.96-7.96s-7.96,3.57-7.96,7.96c0,4.39,3.57,7.96,7.96,7.96c1.98,0,3.81-0.73,5.21-1.94L20.031,20.79z M4.11,11.02c0-3.84,3.13-6.96,6.96-6.96c3.84,0,6.96,3.12,6.96,6.96c0,3.84-3.12,6.96-6.96,6.96C7.24,17.98,4.11,14.86,4.11,11.02 z"/>
+    </svg>
+</svg>

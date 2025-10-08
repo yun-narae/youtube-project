@@ -4,61 +4,67 @@ section {
     @media (max-width: 1200px){
         padding: 120px 20px;
     }
-
+    
     h2 {
         font-size: 1.25rem;
         margin-bottom: 1rem;
         font-weight: 600;
+        
+        @media (min-width: 1200px){
+            margin-top: 60px;
+        }
     }
 }
 
 // Home에 나열되는 section 패딩값
 #home {
     section {
-        padding: 40px;
         @media (max-width: 1200px){
             padding: 30px 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        &:nth-child(1) h2 {
+            margin-top: 70px;
         }
     }
 }
 
 // 마우스 오버 아이콘
-.play__icon {
-    a {
-        position: relative;
-        display: block;
-        cursor: pointer;
-        width: 100%;
+.play__icon-frame {
+    position: relative;
+    display: block;
 
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            transition: background-color 0.3s;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 0, 0, 0.8) url(../../img//icon//play.svg) no-repeat center;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        &:hover::before {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        &:hover::after {
-            opacity: 1;
-        }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity .2s ease;
+        pointer-events: none;
     }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &:hover .play__icon {
+        display: block;
+    }
+}
+
+.play__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    color: white;
 }

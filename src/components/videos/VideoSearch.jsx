@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Icon from '../Icon/Icon';
 
 const VideoSearch = ({ videos, loading, theme }) => {
     const {
@@ -30,10 +31,15 @@ const VideoSearch = ({ videos, loading, theme }) => {
             ) : (
                 videos.map((video, key) => (
                     <div className="video" key={key}>
-                        <div className="video__thumb play__icon">
+                        <div className="video__thumb  play__icon-frame">
                             <Link 
                                 to={`/video/${video.id.videoId}`} 
                                 style={{ backgroundImage: `url(${video.snippet.thumbnails.high.url})` }}>
+                                    <Icon
+                                        name="play"
+                                        size={40}
+                                        className="play__icon"
+                                    />
                             </Link>
                         </div>
                         <div className="video__info">

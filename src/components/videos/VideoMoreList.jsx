@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadMoreButton from '../Button/LoadMoreButton';
+import Icon from '../Icon/Icon';
 
 const VideoMoreList = ({ items, breakpoint = 780, mobileCount = 10, desktopCount = 20, theme }) => {
     const [displayedItems, setDisplayedItems] = useState([]); // 비디오 아이템을 화면에 표시할 상태
@@ -45,9 +46,14 @@ const VideoMoreList = ({ items, breakpoint = 780, mobileCount = 10, desktopCount
             <div className="video__inner">
                 {displayedItems.map((item, index) => (
                     <div key={index} className="video">
-                        <div className="video_thumb play__icon">
+                        <div className="video_thumb play__icon-frame">
                             <Link to={`/video/${item.videoId}`}>
                                 <img src={item.img} alt={item.title} />
+                                <Icon
+                                    name="play"
+                                    size={40}
+                                    className="play__icon"
+                                />
                             </Link>
                         </div>
                     </div>

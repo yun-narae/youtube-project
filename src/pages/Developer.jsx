@@ -4,6 +4,7 @@ import Main from '../components/section/Main';
 import { developerText } from '../data/developer';
 import LoadMoreButton from '../components/Button/LoadMoreButton';
 import { useTheme } from '../contexts/theme';
+import Icon from '../components/Icon/Icon';
 
 const Developer = () => {
     const [loading, setLoading] = useState(true);
@@ -86,9 +87,14 @@ const Developer = () => {
                         <div className="developer__inner">
                         {displayedDevelopers.map((developer, key) => (
                             <div className="developer" key={key}>
-                                <div className="developer__img play__icon">
+                                <div className="developer__img play__icon-frame">
                                     <Link to={`/channel/${developer.channelId}`}>
                                         <img src={developer.img} alt={developer.name} />
+                                        <Icon
+                                            name="play"
+                                            size={40}
+                                            className="play__icon"
+                                        />
                                     </Link>
                                 </div>
                                 <div className="developer__info">

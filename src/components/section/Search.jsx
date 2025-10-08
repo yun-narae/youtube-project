@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useTheme } from '../../contexts/theme';
 import { useNavigate } from 'react-router-dom';
 import NavToggle from '../Button/NavToggle';
+import Icon from '../Icon/Icon';
 
 let debounceTimer; // 컴포넌트 외부에 변수 선언
 
@@ -91,21 +92,27 @@ const Search = ({ isMenuActive, toggleMenu }) => {
             <label htmlFor="searchInput">
                 <span className='ir'>검색</span>
             </label>
-            <input 
-                style={styles.inputStyle}
-                type='search' 
-                name='searchInput' 
-                id='searchInput'
-                autoComplete='off'
-                className='search__input'
-                placeholder="검색어를 입력하세요" 
-                onChange={handleInputChange} // 값을 setSearchKeyword에 전달
-                onKeyDown={e => {
-                    if(e.key === 'Enter'){
-                        handleSearch(); // Enter를 치면 handleSearch함수 실행
-                    }
-                }}
-            />
+            <div className='search__input'>
+                <input
+                    style={styles.inputStyle}
+                    type='search'
+                    name='searchInput'
+                    id='searchInput'
+                    autoComplete='off'
+                    placeholder="검색어를 입력하세요"
+                    onChange={handleInputChange} // 값을 setSearchKeyword에 전달
+                    onKeyDown={e => {
+                        if(e.key === 'Enter'){
+                            handleSearch(); // Enter를 치면 handleSearch함수 실행
+                        }
+                    }}
+                />
+                <Icon
+                    name="search"
+                    size={30}
+                    className="search__icon"
+                />
+            </div>
         </div>
     </div>
     )

@@ -38,27 +38,8 @@ const Logo = ({ isMenuActive, toggleMenu }) => {
             <h1 className='header__logo' style={styles.borderStyles}>
                 <Link to='/'>
                     <em aria-hidden='true' style={styles.logoStyles}></em>
-                    <span>webs<br />youtube</span>
+                    <span>Developer<br />youtube</span>
                 </Link>
-                {/* <div
-                    className="btn-box"
-                    id="headerToggle"
-                    role="button"
-                    tabIndex="0"
-                    aria-controls="primary-menu"
-                    onClick={toggleMenu}
-                    onMouseEnter={() => setIsHovered(true)} // hover 시작
-                    onMouseLeave={() => setIsHovered(false)} // hover 종료
-                    onFocus={() => setIsFocused(true)} // focus 시작
-                    onBlur={() => setIsFocused(false)} // focus 종료
-                    style={{
-                        ...styles.navMenuStyles, 
-                        ...(isHovered ? styles.navMenuHoverStyles : {}),
-                        ...(isFocused ? styles.navMenuHoverStyles : {}), // focus 스타일 적용
-                    }}
-                >
-                    <span style={styles.textStyles}>{isMenuActive ? "햄" : "버거"}</span>
-                </div> */}
                 <NavToggle 
                     isMenuActive={isMenuActive}
                     toggleMenu={toggleMenu}
