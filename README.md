@@ -31,23 +31,23 @@ npm run start
 
 ## 기능 소개
 ### 1. 반응형
-<img src="https://appalling-emerald-rkewwt66da.edgeone.app/UI.gif" width="280" alt="반응형 UI 데모" />
+<img src="./docs/gifs/ui.gif" width="280" alt="반응형 UI 데모" />
 
 ### 2. 다크모드
-<img src="https://insufficient-crimson-wdtbrxrpjf.edgeone.app/theme.gif" width="280" alt="다크모드 데모" />
+<img src="./docs/gifs/theme.gif" width="280" alt="다크모드 데모" />
 
 ### 3. 스켈레톤
 <p>
-  <img src="https://ripe-cyan-gppnvy4kd2.edgeone.app/skeleton-1.gif" width="280" alt="스켈레톤 1" />
-  <img src="https://soft-plum-h4kmz8ub3k.edgeone.app/skeleton-2.gif" width="280" alt="스켈레톤 2" />
-  <img src="https://monthly-teal-cv71mluk2f.edgeone.app/skeleton-3.gif" width="280" alt="스켈레톤 3" />
+  <img src="./docs/gifs/skeleton-1.gif" width="280" alt="스켈레톤 1" />
+  <img src="./docs/gifs/skeleton-2.gif" width="280" alt="스켈레톤 2" />
+  <img src="./docs/gifs/skeleton-3.gif" width="280" alt="스켈레톤 3" />
 </p>
 
 ### 4. 검색
 <p>
   <strong>유튜브 연동</strong><br />
-  <img src="https://vivid-beige-j1mlgqpash.edgeone.app/search.gif" width="280" alt="검색 데모" />
+  <img src="./docs/gifs/search.gif" width="280" alt="검색 데모" />
 </p>
 
 ### 5. 더보기 구현
-<img src="https://energetic-gray-tbqpjubz9o.edgeone.app/more.gif" width="280" alt="더보기 데모" />
+<img src="./docs/gifs/more.gif" width="280" alt="더보기 데모" />
