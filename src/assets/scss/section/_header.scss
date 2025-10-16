@@ -8,9 +8,16 @@ $border-bottom: 4px solid;
     top: 0;
     width: 260px;
     height: 100%;
-    overflow-y: auto;
     z-index: 10000;
     border-right: 2px solid;
+    overflow-y: auto;
+    /* 스크롤바 숨기기 (크로스브라우징) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE, Edge */
+
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
     
     @media (max-width: 1200px) {
         .header__sns {
@@ -121,7 +128,7 @@ $border-bottom: 4px solid;
 }
 
 .switch {
-    padding: 1.25rem;
+    padding: 0 1.25rem;
     display: flex;
     align-items: center;
     font-weight: 600;
