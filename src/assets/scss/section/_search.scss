@@ -1,3 +1,7 @@
+#search {
+    position: relative;
+}
+
 .search__inner {
     position: absolute;
     width: 100%;
@@ -8,6 +12,7 @@
     justify-content: space-between;
     gap: 10px;
     border-bottom: 1px solid;
+    box-sizing: border-box;
 
     label {
         width: 24px;
